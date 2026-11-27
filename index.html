@@ -1,27 +1,39 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<link rel="icon" href="./icon.png" type="image/png">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>女神養成所後台</title>
+<title>女神養成所</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTYiIGZpbGw9IiM1Mjc1NjgiLz4KPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyMDYiIGZpbGw9IiNBOUM2QjUiIG9wYWNpdHk9Ii4yOCIvPgo8cGF0aCBkPSJNMTUwIDMyMiBMMTI4IDE4OCBMMjA0IDI0NCBMMjU2IDE1MCBMMzA4IDI0NCBMMzg0IDE4OCBMMzYyIDMyMiBaIiBmaWxsPSIjRkFGOEYyIiBzdHJva2U9IiNGQUY4RjIiIHN0cm9rZS13aWR0aD0iMjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPGNpcmNsZSBjeD0iMTI4IiBjeT0iMTgwIiByPSIxOSIgZmlsbD0iI0U4QjlBQSIvPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjE0MCIgcj0iMjEiIGZpbGw9IiNFOEI5QUEiLz48Y2lyY2xlIGN4PSIzODQiIGN5PSIxODAiIHI9IjE5IiBmaWxsPSIjRThCOUFBIi8+CjxyZWN0IHg9IjE1MCIgeT0iMzQ2IiB3aWR0aD0iMjEyIiBoZWlnaHQ9IjIyIiByeD0iMTEiIGZpbGw9IiNDN0RDRTQiLz4KPHJlY3QgeD0iMTA0IiB5PSIzMTgiIHdpZHRoPSIzMCIgaGVpZ2h0PSI3OCIgcng9IjEyIiBmaWxsPSIjQzdEQ0U0Ii8+PHJlY3QgeD0iNzIiIHk9IjMzNCIgd2lkdGg9IjI2IiBoZWlnaHQ9IjQ2IiByeD0iMTAiIGZpbGw9IiNDN0RDRTQiLz4KPHJlY3QgeD0iMzc4IiB5PSIzMTgiIHdpZHRoPSIzMCIgaGVpZ2h0PSI3OCIgcng9IjEyIiBmaWxsPSIjQzdEQ0U0Ii8+PHJlY3QgeD0iNDE0IiB5PSIzMzQiIHdpZHRoPSIyNiIgaGVpZ2h0PSI0NiIgcng9IjEwIiBmaWxsPSIjQzdEQ0U0Ii8+CjxwYXRoIGQ9Ik0yNTYgMjMyYy0yLTYtMTItNi0xMiAyIDAgNyAxMiAxNCAxMiAxNHMxMi03IDEyLTE0YzAtOC0xMC04LTEyLTJ6IiBmaWxsPSIjRThCOUFBIi8+Cjwvc3ZnPg==">
+<meta name="theme-color" content="#527568">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <style>
-/* Layout: 單欄表單。上方版本與發佈提示，依序是期間兌換、積分規則、等級、特殊活動，最後是檢查與複製發佈設定 */
+/* Layout: 單欄手機優先。今天（儀表板＋習慣清單）／紀錄／積分（總覽、明細、兌換）／目標／設定，底部五個分頁 */
 :root {
-  --primary: #527568; --sage: #A9C6B5; --bg: #FAF8F2; --text: #37352F; --success: #E8B9AA; --blue: #C7DCE4; --border: #EAE6DE;
-  --card: #FFFEFB; --soft: #6A675E; --mint: #E9F1EC; --peach-tint: #FBF0EB; --warn: #9A4B3A;
+  --primary: #527568;
+  --sage: #A9C6B5;
+  --bg: #FAF8F2;
+  --text: #37352F;
+  --success: #E8B9AA;
+  --blue: #C7DCE4;
+  --border: #EAE6DE;
+  --card: #FFFEFB;
+  --soft: #6A675E;
+  --mint: #E9F1EC;
+  --peach-tint: #FBF0EB;
+  --warn: #9A4B3A;
   --font: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.6; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.6; -webkit-tap-highlight-color: transparent; }
 button, input, select, textarea { font: inherit; color: inherit; }
 h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.3; text-wrap: balance; }
 p { margin: 0; }
-.wrap { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 60px; }
+.wrap { max-width: 640px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 120px; }
 .stack { display: flex; flex-direction: column; gap: 14px; }
 .row { display: flex; align-items: center; gap: 10px; }
 .row.wrap-row { flex-wrap: wrap; }
@@ -29,35 +41,167 @@ p { margin: 0; }
 .muted { color: var(--soft); }
 .small { font-size: 13px; }
 .b { font-weight: 700; }
+
+.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .eyebrow { font-size: 13px; letter-spacing: .08em; color: var(--primary); font-weight: 700; }
 .top h1 { font-size: 26px; margin-top: 2px; }
+.chip { flex: none; background: var(--mint); color: var(--primary); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.chip.peach { background: var(--peach-tint); color: #8A5A4B; }
+
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 16px; }
 .card h2 { font-size: 17px; }
 .card-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.hero { display: flex; gap: 14px; align-items: center; background: var(--mint); border-color: transparent; }
+.hero svg.mascot { flex: none; width: 88px; height: 88px; }
+.hero .msg { font-size: 17px; font-weight: 500; line-height: 1.55; }
+.link-btn { background: none; border: 0; padding: 4px 0; color: var(--primary); font-weight: 700; font-size: 14px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.stat { padding: 14px 12px; display: flex; flex-direction: column; gap: 2px; }
+.stat .label { font-size: 13px; color: var(--soft); }
+.stat .big { font-size: 28px; font-weight: 700; line-height: 1.15; color: var(--primary); font-variant-numeric: tabular-nums; }
+.stat .big small { font-size: 14px; font-weight: 500; color: var(--soft); margin-left: 2px; }
+.bar { height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; margin-top: 6px; }
+.bar > i { display: block; height: 100%; background: var(--sage); border-radius: 99px; }
+.bar > i.full { background: var(--success); }
+
+.levelcard { display: flex; align-items: center; gap: 14px; }
+.lvbadge { flex: none; width: 64px; height: 64px; border-radius: 50%; background: var(--success); display: grid; place-items: center; font-weight: 700; font-size: 18px; color: var(--text); border: 4px solid var(--peach-tint); }
+.lvname { font-size: 18px; font-weight: 700; }
+
+.datenav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.datenav .date { font-weight: 700; text-align: center; flex: 1; }
+.iconbtn { width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); display: grid; place-items: center; cursor: pointer; flex: none; font-size: 20px; line-height: 1; }
+.iconbtn:disabled { opacity: .35; cursor: default; }
+.iconbtn svg { width: 18px; height: 18px; }
+
+.habits { display: flex; flex-direction: column; gap: 10px; }
+.habit { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; cursor: pointer; min-height: 60px; padding: 10px 14px 10px 10px; background: var(--card); border: 1.5px solid var(--border); border-radius: 18px; transition: background .15s, border-color .15s; }
+.habit:focus-visible, .tab:focus-visible, .iconbtn:focus-visible, .link-btn:focus-visible, .btn:focus-visible, .cal-cell:focus-visible, .seg button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.habit .ico, .ico { flex: none; width: 42px; height: 42px; border-radius: 14px; background: var(--mint); display: grid; place-items: center; }
+.habit .ico svg, .ico svg { width: 22px; height: 22px; }
+.ico svg, .tab svg, .bico svg { fill: none; stroke: var(--primary); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.habit .name { flex: 1; min-width: 0; font-weight: 500; overflow-wrap: anywhere; }
+.habit .desc { display: block; font-size: 13px; color: var(--soft); font-weight: 400; }
+.habit .tag { font-size: 12px; font-weight: 700; color: #8A5A4B; background: var(--peach-tint); border-radius: 99px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
+.habit .check { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--sage); display: grid; place-items: center; background: transparent; }
+.habit .check svg { width: 16px; height: 16px; fill: none; stroke: var(--text); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+.habit.done { background: var(--peach-tint); border-color: var(--success); }
+.habit.done .check { background: var(--success); border-color: var(--success); }
+.habit.done .check svg { opacity: 1; }
+.habit.pop .check { animation: pop .35s ease; }
+@keyframes pop { 0% { transform: scale(.7); } 60% { transform: scale(1.18); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .habit.pop .check { animation: none; } * { transition: none !important; animation: none !important; } }
+
 .note { background: var(--blue); border-color: transparent; font-size: 14px; }
 .note.warn { background: var(--peach-tint); color: #6B3F31; }
+.empty { text-align: center; padding: 18px 8px; color: var(--soft); }
+
+.weekstrip { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.wd { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; color: var(--soft); }
+.dot { width: 100%; max-width: 40px; aspect-ratio: 1; border-radius: 50%; border: 1.5px solid var(--border); background: transparent; display: grid; place-items: center; }
+.dot.on { background: var(--sage); border-color: var(--sage); }
+.dot.workout { background: var(--success); border-color: var(--success); }
+.dot svg { width: 55%; fill: none; stroke: var(--text); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.dot.today { box-shadow: 0 0 0 3px var(--blue); }
+.cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.cal .h { text-align: center; font-size: 12px; color: var(--soft); }
+.cal-cell { aspect-ratio: 1; border-radius: 12px; border: 1px solid var(--border); background: var(--card); cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 13px; padding: 0; font-variant-numeric: tabular-nums; }
+.cal-cell.l1 { background: #EDF3EF; }
+.cal-cell.l2 { background: #D5E4DB; }
+.cal-cell.l3 { background: var(--sage); }
+.cal-cell.empty-cell { border: 0; background: transparent; cursor: default; }
+.cal-cell.future { opacity: .4; cursor: default; }
+.cal-cell.today { box-shadow: 0 0 0 2px var(--blue); }
+.cal-cell.sel { border-color: var(--primary); border-width: 2px; }
+.cal-cell .wk { width: 7px; height: 7px; border-radius: 50%; background: var(--success); }
+.cal-cell .wk.none { background: transparent; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--soft); align-items: center; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 4px; vertical-align: -2px; margin-right: 4px; border: 1px solid var(--border); }
+
 label.field { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--soft); min-width: 0; }
 input[type=text], input[type=number], input[type=date], select, textarea { width: 100%; min-width: 0; background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 10px 12px; font-size: 16px; color: var(--text); }
-input:focus, select:focus, textarea:focus, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 1px; }
-input:focus, select:focus, textarea:focus { border-color: var(--primary); }
-textarea { resize: vertical; min-height: 120px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; }
+input:focus, select:focus, textarea:focus { outline: 3px solid var(--blue); border-color: var(--primary); }
+textarea { resize: vertical; min-height: 84px; }
 .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .btn { border: 0; background: var(--primary); color: #fff; border-radius: 14px; padding: 10px 16px; font-weight: 700; cursor: pointer; min-height: 44px; }
 .btn:disabled { opacity: .45; cursor: default; }
 .btn.ghost { background: transparent; color: var(--primary); border: 1.5px solid var(--sage); }
 .btn.danger { background: transparent; color: var(--warn); border: 1.5px solid var(--success); }
-.btn.armed { background: var(--success); color: var(--text); border-color: var(--success); }
+.btn.danger.armed, .btn.armed { background: var(--success); color: var(--text); border-color: var(--success); }
 .btn.sm { min-height: 36px; padding: 6px 12px; font-size: 14px; border-radius: 12px; }
+.btn.block { width: 100%; }
+.stepper { display: flex; align-items: center; gap: 12px; }
+.stepper .v { font-size: 26px; font-weight: 700; min-width: 2ch; text-align: center; color: var(--primary); font-variant-numeric: tabular-nums; }
+
 .edit { border: 1px solid var(--border); border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 10px; background: #fff; }
-.edit.off { opacity: .7; }
-.line { display: flex; gap: 8px; align-items: center; }
+.edit.off { opacity: .65; }
+.edit .line { display: flex; gap: 8px; align-items: center; }
+.edit select { width: auto; flex: none; }
 .checks { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; }
 .checks label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
 .checks input { width: 18px; height: 18px; accent-color: var(--primary); }
+
+.result { border-radius: 16px; padding: 14px; background: var(--mint); }
+.result.peach { background: var(--peach-tint); }
+.result .k { font-size: 13px; color: var(--soft); }
+.result .v { font-size: 24px; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
+.result.peach .v { color: #8A5A4B; }
+.timeline { position: relative; height: 10px; background: var(--border); border-radius: 99px; margin: 10px 0 6px; }
+.timeline > i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--sage); border-radius: 99px; }
+.ticks { display: flex; justify-content: space-between; font-size: 12px; color: var(--soft); gap: 6px; }
+
+.seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; background: var(--mint); padding: 4px; border-radius: 14px; }
+.seg button { border: 0; background: transparent; border-radius: 11px; padding: 8px 4px; font-weight: 500; color: var(--soft); cursor: pointer; }
+.seg button.on { background: var(--card); color: var(--primary); font-weight: 700; }
+
+.ledger { display: flex; flex-direction: column; }
+.lrow { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--border); }
+.lrow:first-child { border-top: 0; }
+.lrow .pts { flex: none; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; min-width: 3ch; text-align: right; }
+.lrow.rev .lt { text-decoration: line-through; color: var(--soft); }
+.lrow.rev .pts { color: var(--soft); text-decoration: line-through; }
+.lrow .ld { font-size: 12px; color: var(--soft); }
 .tagpill { font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 99px; background: var(--mint); color: var(--primary); white-space: nowrap; }
+.tagpill.bonus { background: var(--peach-tint); color: #8A5A4B; }
+.tagpill.off { background: var(--border); color: var(--soft); }
+
+.badges { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.badge { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; font-size: 12px; color: var(--soft); }
+.bico { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--border); opacity: .6; }
+.bico svg { width: 26px; height: 26px; stroke: var(--soft); }
+.badge.on { color: var(--text); font-weight: 500; }
+.badge.on .bico { background: var(--success); opacity: 1; }
+.badge.on .bico svg { stroke: var(--text); }
+
+.sumrow { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; }
+.sumrow .v { font-weight: 700; font-variant-numeric: tabular-nums; }
+.kv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.kv > div { background: var(--mint); border-radius: 14px; padding: 10px 12px; }
+.kv .k { font-size: 12px; color: var(--soft); }
+.kv .v { font-size: 22px; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
 .rules { margin: 0; padding-left: 20px; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
-.errs { margin: 0; padding-left: 20px; font-size: 14px; color: var(--warn); display: flex; flex-direction: column; gap: 4px; }
+
+.tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: rgba(250, 248, 242, .96); border-top: 1px solid var(--border); padding: 8px max(16px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.tabs-in { max-width: 640px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+.tab { border: 0; background: transparent; border-radius: 14px; padding: 6px 2px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 12px; font-weight: 500; color: var(--soft); cursor: pointer; }
+.tab svg { width: 22px; height: 22px; stroke: var(--soft); }
+.tab.on { background: var(--mint); color: var(--primary); font-weight: 700; }
+.tab.on svg { stroke: var(--primary); }
+
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(84px + env(safe-area-inset-bottom, 0px)); z-index: 50; background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 99px; font-size: 14px; max-width: calc(100% - 32px); text-align: center; }
+.toast[hidden] { display: none; }
+
+.overlay { position: fixed; inset: 0; z-index: 40; background: rgba(55, 53, 47, .45); display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); overflow: auto; }
+.modal { background: var(--bg); border-radius: 24px; padding: 22px 18px; max-width: 420px; width: 100%; display: flex; flex-direction: column; gap: 12px; max-height: 100%; overflow: auto; position: relative; }
+.modal h2 { font-size: 20px; }
+.modal ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
+.modal .mascot { width: 96px; height: 96px; align-self: center; }
+.confetti { position: absolute; inset: 0; overflow: hidden; pointer-events: none; border-radius: 24px; }
+.confetti i { position: absolute; top: -12px; width: 8px; height: 14px; border-radius: 2px; animation: fall 2.4s ease-in infinite; }
+@keyframes fall { to { transform: translateY(520px) rotate(360deg); opacity: .2; } }
+
 .icobtn { position: relative; flex: none; width: 46px; height: 46px; border-radius: 14px; border: 1.5px solid var(--border); background: var(--mint); display: grid; place-items: center; cursor: pointer; padding: 0; }
 .icobtn svg, .icopick svg { fill: none; stroke: var(--primary); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .icobtn svg { width: 24px; height: 24px; }
@@ -66,27 +210,100 @@ textarea { resize: vertical; min-height: 120px; font-family: ui-monospace, Menlo
 .icopick { width: 100%; max-width: 52px; aspect-ratio: 1; border-radius: 12px; border: 1.5px solid transparent; background: #fff; display: grid; place-items: center; cursor: pointer; padding: 0; }
 .icopick svg { width: 22px; height: 22px; }
 .icopick.on { border-color: var(--primary); background: var(--peach-tint); }
-.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 50; background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 99px; font-size: 14px; max-width: calc(100% - 32px); text-align: center; }
-.toast[hidden] { display: none; }
-.pubbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; }
+.icobtn:focus-visible, .icopick:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+@media (max-width: 380px) {
+  .top h1 { font-size: 23px; }
+  .stat .big { font-size: 24px; }
+  .hero svg.mascot { width: 72px; height: 72px; }
+  .badges { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.bt { display: grid; grid-template-columns: 4.4em minmax(0, 1fr) minmax(0, 1fr) 3.4em; gap: 8px; align-items: center; }
+.bt input { text-align: center; padding: 8px 4px; }
+.bt .bh { font-size: 12px; color: var(--soft); text-align: center; font-weight: 700; }
+.bt .bl { font-size: 14px; font-weight: 700; }
+.bt .bl small { display: block; font-size: 11px; font-weight: 400; color: var(--soft); line-height: 1.2; }
+.bt .chg { font-weight: 700; color: var(--primary); text-align: center; font-variant-numeric: tabular-nums; font-size: 15px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.wchip { border: 1.5px solid var(--sage); background: var(--mint); color: var(--primary); border-radius: 999px; padding: 6px 12px; font-size: 14px; font-weight: 500; cursor: pointer; }
+.wchip:active { transform: scale(.96); }
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand svg.logo { flex: none; width: 46px; height: 46px; border-radius: 13px; }
 </style>
 </head>
 <body>
 <div class="wrap"><div id="view"></div></div>
+<nav class="tabs" aria-label="主要分頁"><div class="tabs-in" id="tabs"></div></nav>
+<div id="modal"></div>
 <div class="toast" id="toast" role="status" hidden></div>
 
 <script>
 (function () {
   'use strict';
-  var KEY = 'goddess-admin-v1';
-  var HABIT_DEFAULTS = [
-    { id: 'h-train', name: '完成今天的運動', desc: 'Curves30分鐘肌力訓練', icon: 'dumbbell', workout: true },
-    { id: 'h-protein', name: '蛋白質吃夠', desc: '每餐一個手掌大小', icon: 'bowl', workout: false },
-    { id: 'h-water', name: '喝水 2000 cc', desc: '分次喝，睡前不用硬灌', icon: 'drop', workout: false },
-    { id: 'h-veg', name: '每餐都有蔬菜', desc: '穩定血糖並增加飽足感', icon: 'leaf', workout: false },
-    { id: 'h-sleep', name: '睡滿 7 小時', desc: '睡得好，肌肉才長得好', icon: 'moon', workout: false }
-  ];
-  function habitsOf() { return A.draft.habits || HABIT_DEFAULTS; }
+
+  /* =====================================================================
+   * 店內活動設定（會員版）
+   * 這一段由「女神養成所後台」產生，更新時整段貼上取代即可，其他程式碼不用動。
+   * 會員無法在 App 內修改這些設定。更新後，會員下次開啟時會自動套用：
+   *  - 積分規則：從隔天起生效（或 rulesEffectiveFrom 指定的較晚日期），不回溯
+   *  - 已經拿到的積分、活動獎勵、兌換紀錄完全不受影響
+   *  - 每次更新，configVersion 要比上一版大（後台會自動處理）
+   * ===================================================================== */
+  /*__STORE_BEGIN__*/
+  var STORE = {
+    configVersion: 2,
+    rulesEffectiveFrom: '',
+    period: { start: '2026-12-01', end: '2027-02-28' },
+    ticketCost: 20,
+    habits: [
+      { id: 'h-train', name: '完成今天的運動', desc: 'Curves30分鐘肌力訓練', icon: 'dumbbell', workout: true },
+      { id: 'h-protein', name: '蛋白質吃夠', desc: '每餐一個手掌大小', icon: 'bowl', workout: false },
+      { id: 'h-water', name: '喝水 2000 cc', desc: '分次喝，睡前不用硬灌', icon: 'drop', workout: false },
+      { id: 'h-veg', name: '每餐都有蔬菜', desc: '穩定血糖並增加飽足感', icon: 'leaf', workout: false },
+      { id: 'h-sleep', name: '睡滿 7 小時', desc: '睡得好，肌肉才長得好', icon: 'moon', workout: false }
+    ],
+    levels: [
+      { lv: 1, name: '初心女神', min: 0 },
+      { lv: 2, name: '習慣女神', min: 50 },
+      { lv: 3, name: '自律女神', min: 100 },
+      { lv: 4, name: '力量女神', min: 150 },
+      { lv: 5, name: '閃耀女神', min: 200 },
+      { lv: 6, name: '自信女神', min: 300 },
+      { lv: 7, name: '窈窕女神', min: 400 },
+      { lv: 8, name: '完美女神', min: 500 },
+      { lv: 9, name: '自由女神🗽', min: 600 },
+      { lv: 10, name: '女神降臨✨', min: 700 }
+    ],
+    rules: {
+      perHabit: 1,
+      allDayBonus: 3,
+      weekWorkout: { days: 3, points: 5 },
+      weekConsistent: { days: 5, perDayMin: 3, points: 3 },
+      weekMission: { points: 5, missions: [
+        { title: '本週 5 天喝足水', habitId: 'h-water', days: 5 },
+        { title: '本週 5 天睡滿 7 小時', habitId: 'h-sleep', days: 5 },
+        { title: '本週 5 天蛋白質吃夠', habitId: 'h-protein', days: 5 }
+      ] },
+      streak: { len: 7, perDayMin: 3, points: 5 }
+    },
+    events: [
+      { id: 'evt-xmas', name: '聖誕節健康日', desc: '12/24-25 完成運動，送給自己的聖誕禮物。', icon: 'tree', start: '2026-12-24', end: '2026-12-25', kind: 'habit_once', habitId: 'h-train', target: 1, points: 3, enabled: true },
+      { id: 'evt-newyear', name: '元旦連續運動', desc: '1/1來運動，開年第一份力量。', icon: 'flame', start: '2027-01-01', end: '2027-01-01', kind: 'habit_once', habitId: 'h-train', target: 1, points: 5, enabled: true },
+      { id: 'evt-cny', name: '農曆新年健康任務', desc: '2/10-13 開工大吉，輕鬆照顧自己。', icon: 'gift', start: '2027-02-10', end: '2027-02-13', kind: 'habit_once', habitId: 'h-train', target: 1, points: 3, enabled: true },
+      { id: 'evt-boost', name: '運動次數加碼（範例）', desc: '1/15–1/31 累計運動 8 天加碼。', icon: 'trophy', start: '2027-01-15', end: '2027-01-31', kind: 'workout_days', habitId: 'h-train', target: 8, points: 5, enabled: false }
+    ]
+  };
+  /*__STORE_END__*/
+
+  var CONFIG = Object.assign({
+    storageKey: 'goddess-habit-v1',          // 不要改，改了會讀不到舊資料
+    schema: 2,                                // 資料結構版本
+    habitsDefault: true
+  }, STORE);
+  var KEY = CONFIG.storageKey;
+  CONFIG.habits = STORE.habits.map(function (h) { return { id: h.id, name: h.name, desc: h.desc, icon: h.icon, workout: !!h.workout, active: true }; });
+  var WEEKDAY = ['日', '一', '二', '三', '四', '五', '六'];
+
   var ICONS = {
     dumbbell: '<path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/>',
     drop: '<path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/>',
@@ -107,271 +324,910 @@ textarea { resize: vertical; min-height: 120px; font-family: ui-monospace, Menlo
     tree: '<path d="M12 3l5 7h-3l4 6H6l4-6H7z"/><path d="M12 16v4"/>'
   };
   var ICON_NAMES = { dumbbell: '啞鈴', drop: '水滴', leaf: '葉子', moon: '月亮', shoe: '腳步', bowl: '餐碗', sun: '太陽', heart: '愛心', stretch: '伸展', star: '星星', gift: '禮物', spark: '閃光', flag: '旗子', trophy: '獎盃', ticket: '票券', flame: '火焰', tree: '聖誕樹' };
-  var KINDS = { habit_once: '活動期間完成指定習慣（一次）', workout_days: '活動期間累計運動天數', workout_streak: '活動期間連續運動天數', full_days: '活動期間「全部完成」的天數' };
-  var DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-
-  /* 與會員版目前內建的設定相同（第 2 版） */
-  function defaults() {
-    return {
-      rulesEffectiveFrom: '',
-      period: { start: '2026-12-01', end: '2027-02-28' },
-      ticketCost: 20,
-      habits: JSON.parse(JSON.stringify(HABIT_DEFAULTS)),
-      levels: [{ name: '初心女神', min: 0 }, { name: '習慣女神', min: 50 }, { name: '自律女神', min: 100 }, { name: '力量女神', min: 150 }, { name: '閃耀女神', min: 200 }, { name: '自信女神', min: 300 }, { name: '窈窕女神', min: 400 }, { name: '完美女神', min: 500 }, { name: '自由女神🗽', min: 600 }, { name: '女神降臨✨', min: 700 }],
-      rules: {
-        perHabit: 1, allDayBonus: 3,
-        weekWorkout: { days: 3, points: 5 },
-        weekConsistent: { days: 5, perDayMin: 3, points: 3 },
-        weekMission: { points: 5, missions: [
-          { title: '本週 5 天喝足水', habitId: 'h-water', days: 5 }, { title: '本週 5 天睡滿 7 小時', habitId: 'h-sleep', days: 5 }, { title: '本週 5 天蛋白質吃夠', habitId: 'h-protein', days: 5 }
-        ] },
-        streak: { len: 7, perDayMin: 3, points: 5 }
-      },
-      events: [
-        { id: 'evt-xmas', name: '聖誕節健康日', desc: '12/24-25 完成運動，送給自己的聖誕禮物。', icon: 'tree', start: '2026-12-24', end: '2026-12-25', kind: 'habit_once', habitId: 'h-train', target: 1, points: 3, enabled: true },
-        { id: 'evt-newyear', name: '元旦連續運動', desc: '1/1來運動，開年第一份力量。', icon: 'flame', start: '2027-01-01', end: '2027-01-01', kind: 'habit_once', habitId: 'h-train', target: 1, points: 5, enabled: true },
-        { id: 'evt-cny', name: '農曆新年健康任務', desc: '2/10-13 開工大吉，輕鬆照顧自己。', icon: 'gift', start: '2027-02-10', end: '2027-02-13', kind: 'habit_once', habitId: 'h-train', target: 1, points: 3, enabled: true },
-        { id: 'evt-boost', name: '運動次數加碼（範例）', desc: '1/15–1/31 累計運動 8 天加碼。', icon: 'trophy', start: '2027-01-15', end: '2027-01-31', kind: 'workout_days', habitId: 'h-train', target: 8, points: 5, enabled: false }
-      ]
-    };
-  }
-  var A = { draft: defaults(), published: 2 };
-  var memOnly = false;
-  function clone(o) { return JSON.parse(JSON.stringify(o)); }
-  function load() {
-    try { var t = localStorage.getItem(KEY); if (t) { var o = JSON.parse(t); if (o && o.draft && o.draft.rules) { A = { draft: o.draft, published: parseInt(o.published, 10) || 1 }; if (!Array.isArray(A.draft.habits) || A.draft.habits.length !== 5) A.draft.habits = JSON.parse(JSON.stringify(HABIT_DEFAULTS)); } } } catch (e) { memOnly = true; }
-  }
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(A)); } catch (e) { memOnly = true; } }
-  load();
-  var U = { iconHab: null, confirm: null, iconEv: null, copied: '', importText: '', importError: '', out: '' };
-
-  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function svg(k) { return '<svg viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[k] || ICONS.star) + '</svg>'; }
-  function pad(n) { return (n < 10 ? '0' : '') + n; }
-  function sd(k) { var p = k.split('-'); return parseInt(p[1], 10) + '/' + parseInt(p[2], 10); }
-  var toastTimer;
-  function toast(m) { var t = document.getElementById('toast'); t.textContent = m; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, 2600); }
-
-  /* ---------- 檢查與輸出 ---------- */
-  function hasHabit(id) { return habitsOf().some(function (h) { return h.id === id; }); }
-  function validate() {
-    var d = A.draft, errs = [], warns = [], r = d.rules, i;
-    if (!DATE_RE.test(d.period.start) || !DATE_RE.test(d.period.end) || d.period.start > d.period.end) errs.push('活動期間的開始日期必須早於或等於結束日期。');
-    habitsOf().forEach(function (h, k) { if (!String(h.name).trim()) errs.push('第 ' + (k + 1) + ' 個好習慣的名稱不能空白。'); });
-    if (!(d.ticketCost >= 1)) errs.push('抽獎券兌換積分至少要 1。');
-    if (d.rulesEffectiveFrom && !DATE_RE.test(d.rulesEffectiveFrom)) errs.push('規則生效日格式不正確。');
-    if (!d.levels.length) errs.push('至少需要一個等級。');
-    d.levels.forEach(function (l, k) {
-      if (!l.name.trim()) errs.push('第 ' + (k + 1) + ' 級沒有名稱。');
-      if (k > 0 && !(l.min > d.levels[k - 1].min)) errs.push('第 ' + (k + 1) + ' 級的累積積分必須大於上一級。');
-    });
-    if (d.levels.length && d.levels[0].min !== 0) errs.push('第 1 級的累積積分必須是 0。');
-    if (r.weekWorkout.days < 1 || r.weekWorkout.days > 7) errs.push('每週運動日需在 1–7 之間。');
-    if (r.weekConsistent.days < 1 || r.weekConsistent.days > 7) errs.push('每週穩定達標的天數需在 1–7 之間。');
-    if (r.weekConsistent.perDayMin < 1 || r.streak.perDayMin < 1) errs.push('「每天幾項」至少要 1。');
-    if (r.weekConsistent.perDayMin > habitsOf().length || r.streak.perDayMin > habitsOf().length) warns.push('「每天幾項」比核心習慣數（' + habitsOf().length + '）還多，會員可能不容易達成。');
-    if (r.streak.len < 1) errs.push('連續達標天數至少要 1。');
-    r.weekMission.missions.forEach(function (m, k) {
-      if (!m.title.trim()) errs.push('第 ' + (k + 1) + ' 個每週任務沒有名稱。');
-      if (!hasHabit(m.habitId)) errs.push('第 ' + (k + 1) + ' 個每週任務的指定習慣不存在。');
-      if (m.days < 1 || m.days > 7) errs.push('第 ' + (k + 1) + ' 個每週任務的天數需在 1–7 之間。');
-    });
-    if (!r.weekMission.missions.length) warns.push('沒有任何每週任務，每週任務獎勵將不會發放。');
-    var ids = {};
-    d.events.forEach(function (e, k) {
-      var nm = '活動「' + (e.name || ('第 ' + (k + 1) + ' 個')) + '」';
-      if (!e.name.trim()) errs.push('第 ' + (k + 1) + ' 個活動沒有名稱。');
-      if (ids[e.id]) errs.push(nm + '的編號重複。'); ids[e.id] = 1;
-      if (!DATE_RE.test(e.start) || !DATE_RE.test(e.end) || e.end < e.start) errs.push(nm + '的日期不正確。');
-      if (e.kind === 'habit_once' && !hasHabit(e.habitId)) errs.push(nm + '的指定習慣不存在。');
-      if (e.kind !== 'habit_once' && !(e.target >= 1)) errs.push(nm + '的需要天數至少 1。');
-      if (e.enabled && (e.end < d.period.start || e.start > d.period.end)) warns.push(nm + '完全不在活動期間內，不會發分。');
-      else if (e.enabled && (e.start < d.period.start || e.end > d.period.end)) warns.push(nm + '有部分日期在活動期間外，期間外的打卡不計分。');
-      var span = (new Date(e.end) - new Date(e.start)) / 86400000 + 1;
-      if (e.enabled && e.kind !== 'habit_once' && e.target > span) warns.push(nm + '需要的天數（' + e.target + '）比活動天數（' + span + '）還多，永遠無法達成。');
-    });
-    return { errs: errs, warns: warns };
-  }
-  function buildOutput(version) {
-    var d = A.draft;
-    return {
-      configVersion: version,
-      rulesEffectiveFrom: d.rulesEffectiveFrom || '',
-      period: { start: d.period.start, end: d.period.end },
-      ticketCost: d.ticketCost,
-      habits: habitsOf().map(function (h) { return { id: h.id, name: h.name.trim(), desc: h.desc.trim(), icon: h.icon, workout: !!h.workout }; }),
-      levels: d.levels.map(function (l, i) { return { lv: i + 1, name: l.name.trim(), min: l.min }; }),
-      rules: clone(d.rules),
-      events: d.events.map(function (e) { return { id: e.id, name: e.name.trim(), desc: e.desc.trim(), icon: e.icon, start: e.start, end: e.end, kind: e.kind, habitId: e.habitId, target: e.kind === 'habit_once' ? 1 : e.target, points: e.points, enabled: !!e.enabled }; })
-    };
-  }
-  function summaryText() {
-    var d = A.draft, r = d.rules, L = [];
-    L.push('女神養成所 活動規則');
-    L.push('活動期間：' + d.period.start.replace(/-/g, '/') + ' – ' + d.period.end.replace(/-/g, '/'));
-    L.push('');
-    L.push('【每日】每完成 1 項習慣 +' + r.perHabit + '；當日全部完成再 +' + r.allDayBonus);
-    L.push('【每週】完成至少 ' + r.weekWorkout.days + ' 個運動日 +' + r.weekWorkout.points + '；至少 ' + r.weekConsistent.days + ' 天每天完成 ' + r.weekConsistent.perDayMin + ' 項以上 +' + r.weekConsistent.points + '；完成每週任務 +' + r.weekMission.points);
-    L.push('【連續】每連續 ' + r.streak.len + ' 天、每天完成 ' + r.streak.perDayMin + ' 項以上 +' + r.streak.points);
-    var evs = d.events.filter(function (e) { return e.enabled; });
-    if (evs.length) { L.push('【特殊活動】'); evs.forEach(function (e) { L.push('・' + e.name + '（' + sd(e.start) + (e.end !== e.start ? '–' + sd(e.end) : '') + '）+' + e.points + '：' + e.desc); }); }
-    L.push('');
-    L.push('【等級】' + d.levels.map(function (l, i) { return 'LV' + (i + 1) + ' ' + l.name + '（' + l.min + (i === d.levels.length - 1 ? '+' : '') + '）'; }).join('、'));
-    L.push('【兌換】' + d.ticketCost + ' 積分 = 1 張抽獎券，到店找教練兌換');
-    return L.join('\n');
-  }
-
-  /* ---------- 畫面 ---------- */
-  function numField(path, val, label, step) { return '<label class="field">' + label + '<input type="number" inputmode="decimal" min="0" step="' + (step || 1) + '" data-p="' + path + '" value="' + esc(val) + '"></label>'; }
-  function habitOpts(sel) { return habitsOf().map(function (h) { return '<option value="' + h.id + '"' + (h.id === sel ? ' selected' : '') + '>' + esc(h.name) + '</option>'; }).join(''); }
-  function habitCard(hb, i) {
-    var open = U.iconHab === i, d = 'data-hb="' + i + '"';
-    var grid = open ? '<div class="icogrid" role="group" aria-label="選擇圖示">' + Object.keys(ICONS).map(function (k) { return '<button type="button" class="icopick' + (hb.icon === k ? ' on' : '') + '" data-act="hbicon" data-i="' + i + '" data-icon="' + k + '" aria-label="' + ICON_NAMES[k] + '">' + svg(k) + '</button>'; }).join('') + '</div>' : '';
-    return '<div class="edit"><div class="line"><button type="button" class="icobtn" data-act="hbopen" data-i="' + i + '" aria-label="更換圖示">' + svg(hb.icon) + '</button><input type="text" ' + d + ' data-f="name" value="' + esc(hb.name) + '" maxlength="30" placeholder="習慣名稱" aria-label="習慣名稱"></div>' + grid +
-      '<input type="text" ' + d + ' data-f="desc" value="' + esc(hb.desc) + '" maxlength="40" placeholder="說明（會員看得到）" aria-label="習慣說明">' + (hb.workout ? '<div class="small muted">這一項會被算成「運動」，影響每週運動日與運動活動。</div>' : '') + '</div>';
-  }
-  function eventCard(e, i) {
-    var kindOpts = Object.keys(KINDS).map(function (k) { return '<option value="' + k + '"' + (e.kind === k ? ' selected' : '') + '>' + KINDS[k] + '</option>'; }).join('');
-    var key = 'evdel:' + i, armed = U.confirm === key, d = 'data-ev="' + i + '"', open = U.iconEv === i;
-    var grid = open ? '<div class="icogrid" role="group" aria-label="選擇圖示">' + Object.keys(ICONS).map(function (k) { return '<button type="button" class="icopick' + (e.icon === k ? ' on' : '') + '" data-act="evicon" data-i="' + i + '" data-icon="' + k + '" aria-label="' + ICON_NAMES[k] + '">' + svg(k) + '</button>'; }).join('') + '</div>' : '';
-    return '<div class="edit' + (e.enabled ? '' : ' off') + '"><div class="line"><button type="button" class="icobtn" data-act="evopen" data-i="' + i + '" aria-label="更換圖示">' + svg(e.icon) + '</button><input type="text" ' + d + ' data-f="name" value="' + esc(e.name) + '" maxlength="30" placeholder="活動名稱" aria-label="活動名稱"></div>' + grid +
-      '<input type="text" ' + d + ' data-f="desc" value="' + esc(e.desc) + '" maxlength="60" placeholder="活動說明（會員看得到）" aria-label="活動說明">' +
-      '<div class="grid2"><label class="field">開始<input type="date" ' + d + ' data-f="start" value="' + esc(e.start) + '"></label><label class="field">結束<input type="date" ' + d + ' data-f="end" value="' + esc(e.end) + '"></label></div>' +
-      '<label class="field">任務條件<select ' + d + ' data-f="kind">' + kindOpts + '</select></label>' +
-      (e.kind === 'habit_once' ? '<label class="field">指定習慣<select ' + d + ' data-f="habitId">' + habitOpts(e.habitId) + '</select></label>' : '<label class="field">需要天數<input type="number" min="1" ' + d + ' data-f="target" value="' + e.target + '"></label>') +
-      '<div class="grid2"><label class="field">獎勵積分<input type="number" min="0" ' + d + ' data-f="points" value="' + e.points + '"></label><div class="checks" style="align-self:end;padding-bottom:10px"><label><input type="checkbox" ' + d + ' data-f="enabled"' + (e.enabled ? ' checked' : '') + '>啟用</label></div></div>' +
-      '<div class="row wrap-row"><span class="small muted">編號 ' + esc(e.id) + '</span><span class="grow"></span><button class="btn danger sm' + (armed ? ' armed' : '') + '" data-act="evdel" data-i="' + i + '">' + (armed ? '再按一次確認刪除' : '刪除活動') + '</button></div></div>';
-  }
-  function checksHtml(v) {
-    return (v.errs.length ? '<ul class="errs">' + v.errs.map(function (e) { return '<li>' + esc(e) + '</li>'; }).join('') + '</ul>' : '<p class="b" style="color:var(--primary)">沒有錯誤，可以發佈。</p>') +
-      (v.warns.length ? '<div class="small b" style="margin-top:10px">提醒</div><ul class="rules">' + v.warns.map(function (e) { return '<li>' + esc(e) + '</li>'; }).join('') + '</ul>' : '');
-  }
-  /* 輸入時只更新檢查區、公告文字與複製按鈕，不整頁重繪，避免吃掉使用者接著要點的按鈕 */
-  function refreshChecks() {
-    var v = validate(), c = document.getElementById('checks'), sm = document.getElementById('sum'), b = document.getElementById('copybtn');
-    if (c) c.innerHTML = checksHtml(v);
-    if (sm) sm.value = summaryText();
-    if (b) b.disabled = v.errs.length > 0;
-  }
-  function render() {
-    var d = A.draft, r = d.rules, v = validate(), next = A.published + 1;
-    var h = '<div class="stack"><div class="top"><div class="eyebrow">教練專用</div><h1>女神養成所後台</h1></div>';
-    h += '<div class="card note warn">這個頁面只給教練使用，請不要上傳到 GitHub 公開頁面。會員版看不到也改不了這些設定。' + (memOnly ? '<br><b>目前瀏覽器無法儲存草稿，重新整理後修改會消失。</b>' : '') + '</div>';
-    h += '<div class="card"><div class="card-head"><h2>發佈說明</h2><span class="tagpill">下次發佈：第 ' + next + ' 版</span></div><ol class="rules"><li>在下方調整設定，最下面按「複製發佈設定」。</li><li>把複製的內容整段貼給 Claude，請 Claude 更新會員版並上架 GitHub。</li><li>會員下次打開網頁時自動套用：<b>已拿到的積分、活動獎勵、兌換紀錄都不會改變</b>；積分規則從隔天起生效。</li></ol></div>';
-    h += '<div class="card"><div class="card-head"><h2>活動期間與兌換</h2></div><div class="grid2"><label class="field">開始<input type="date" data-p="period.start" value="' + esc(d.period.start) + '"></label><label class="field">結束<input type="date" data-p="period.end" value="' + esc(d.period.end) + '"></label>' +
-      numField('ticketCost', d.ticketCost, '幾積分兌換 1 張抽獎券') + '<label class="field">規則生效日（留空＝會員更新後隔天）<input type="date" data-p="rulesEffectiveFrom" value="' + esc(d.rulesEffectiveFrom) + '"></label></div>' +
-      '<p class="small muted" style="margin-top:8px">只有活動期間內的打卡會計分。規則生效日只能晚於「隔天」，不會回溯。</p></div>';
-    h += '<div class="card"><div class="card-head"><h2>每日好習慣</h2><span class="small muted">5 個核心習慣</span></div><div class="stack" style="gap:10px">' + habitsOf().map(habitCard).join('') + '</div>' +
-      '<p class="small muted" style="margin-top:8px">名稱、說明、圖示會員都看得到，但會員不能自己改。習慣數量與編號固定，積分規則和每週任務都靠編號對應，不會受影響。已經打卡的紀錄不會被改動。</p></div>';
-    h += '<div class="card"><div class="card-head"><h2>積分規則</h2></div><div class="stack" style="gap:10px"><div class="grid2">' + numField('rules.perHabit', r.perHabit, '每完成 1 項習慣') + numField('rules.allDayBonus', r.allDayBonus, '當日全部完成加分') + '</div>' +
-      '<div class="b small">每週運動日</div><div class="grid2">' + numField('rules.weekWorkout.days', r.weekWorkout.days, '至少幾個運動日') + numField('rules.weekWorkout.points', r.weekWorkout.points, '加分') + '</div>' +
-      '<div class="b small">每週穩定達標</div><div class="grid3">' + numField('rules.weekConsistent.days', r.weekConsistent.days, '至少幾天') + numField('rules.weekConsistent.perDayMin', r.weekConsistent.perDayMin, '每天幾項') + numField('rules.weekConsistent.points', r.weekConsistent.points, '加分') + '</div>' +
-      '<div class="b small">連續達標</div><div class="grid3">' + numField('rules.streak.len', r.streak.len, '連續幾天') + numField('rules.streak.perDayMin', r.streak.perDayMin, '每天幾項') + numField('rules.streak.points', r.streak.points, '加分') + '</div>' +
-      '<div class="b small">每週指定任務（依週次輪流）</div>' + numField('rules.weekMission.points', r.weekMission.points, '完成任務加分') +
-      r.weekMission.missions.map(function (m, i) {
-        return '<div class="edit"><input type="text" data-ms="' + i + '" data-f="title" value="' + esc(m.title) + '" maxlength="40" placeholder="任務名稱" aria-label="任務名稱"><div class="grid2"><label class="field">指定習慣<select data-ms="' + i + '" data-f="habitId">' + habitOpts(m.habitId) + '</select></label><label class="field">需要天數<input type="number" min="1" max="7" data-ms="' + i + '" data-f="days" value="' + m.days + '"></label></div><div><button class="btn danger sm" data-act="msdel" data-i="' + i + '">移除此任務</button></div></div>';
-      }).join('') + '<div><button class="btn ghost sm" data-act="msadd">新增任務</button></div></div>' +
-      '<p class="small muted" style="margin-top:8px">習慣編號固定為 5 個核心習慣，名稱與圖示在上面的「每日好習慣」修改。已經開始的週，任務內容不會被改動。</p></div>';
-    h += '<div class="card"><div class="card-head"><h2>女神等級</h2><span class="small muted">依累積積分</span></div><div class="stack" style="gap:10px">' + d.levels.map(function (l, i) {
-      return '<div class="line"><span class="tagpill" style="min-width:3.4em;text-align:center">LV' + (i + 1) + '</span><input type="text" data-lv="' + i + '" data-f="name" value="' + esc(l.name) + '" maxlength="12" aria-label="等級名稱"><input type="number" min="0" data-lv="' + i + '" data-f="min" value="' + l.min + '"' + (i === 0 ? ' disabled' : '') + ' aria-label="累積積分門檻" style="max-width:96px"></div>';
-    }).join('') + '<div class="row wrap-row"><button class="btn ghost sm" data-act="lvadd">新增等級</button><button class="btn ghost sm" data-act="lvdel"' + (d.levels.length <= 1 ? ' disabled' : '') + '>移除最後一級</button></div></div></div>';
-    h += '<div class="card"><div class="card-head"><h2>特殊活動</h2><span class="small muted">' + d.events.length + ' 個</span></div><div class="stack" style="gap:10px">' + d.events.map(eventCard).join('') + '</div><div style="margin-top:12px"><button class="btn ghost sm" data-act="evadd">新增活動</button></div>' +
-      '<p class="small muted" style="margin-top:8px">已經有會員拿到的活動積分，不會因為修改或停用而被收回；會員拿到之後，該活動依「當時的條件」判斷。想讓大家重新領一次，請新增一個新活動（會產生新編號）。</p></div>';
-    h += '<div class="card"><div class="card-head"><h2>發佈前檢查</h2></div><div id="checks">' + checksHtml(v) + '</div></div>';
-    h += '<div class="card"><div class="card-head"><h2>公告文字</h2><button class="btn ghost sm" data-act="copysum">複製</button></div><textarea id="sum" readonly style="min-height:200px;font-family:var(--font);font-size:14px">' + esc(summaryText()) + '</textarea><p class="small muted" style="margin-top:6px">可以直接貼到 LINE 群組或貼文，跟會員說明目前規則。</p></div>';
-    h += '<div class="card"><div class="card-head"><h2>發佈設定</h2><span class="tagpill">第 ' + next + ' 版</span></div><button class="btn" id="copybtn" data-act="copycfg"' + (v.errs.length ? ' disabled' : '') + '>複製發佈設定</button>' +
-      (U.copied ? '<p class="small b" style="margin-top:8px;color:var(--primary)">' + esc(U.copied) + '</p>' : '') +
-      (U.out ? '<label class="field" style="margin-top:10px" for="out">如果沒有自動複製，請全選後手動複製，貼給 Claude</label><textarea id="out" readonly>' + esc(U.out) + '</textarea>' : '') + '</div>';
-    h += '<div class="card"><div class="card-head"><h2>載入既有設定</h2></div><p class="small muted" style="margin-bottom:8px">換裝置或想還原之前複製的發佈設定時，貼在這裡。</p><textarea id="imp" data-imp="1" placeholder="貼上發佈設定">' + esc(U.importText) + '</textarea>' +
-      '<div class="row wrap-row" style="margin-top:10px"><button class="btn sm" data-act="impgo">載入</button><button class="btn danger sm' + (U.confirm === 'reset' ? ' armed' : '') + '" data-act="reset">' + (U.confirm === 'reset' ? '再按一次確認還原預設' : '還原成預設設定') + '</button></div>' +
-      (U.importError ? '<p class="small" style="color:var(--warn);margin-top:8px">' + esc(U.importError) + '</p>' : '') + '</div></div>';
-    document.getElementById('view').innerHTML = h;
-  }
-  var rendering = false, again = false;
-  function draw() {
-    if (rendering) { again = true; return; }
-    rendering = true;
-    try { var a = document.activeElement; if (a && a !== document.body && a.blur) { again = false; a.blur(); } render(); } finally { rendering = false; }
-    if (again) { again = false; draw(); }
-  }
-  function arm(key, fn) { if (U.confirm === key) { U.confirm = null; fn(); return; } U.confirm = key; draw(); setTimeout(function () { if (U.confirm === key) { U.confirm = null; draw(); } }, 4000); }
-  function copyText(text, fallbackId, done) {
-    function fb() { var t = document.getElementById(fallbackId); if (t) { t.focus(); t.select(); } done(false); }
-    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fb); else fb(); } catch (e) { fb(); }
-  }
-  function setPath(obj, path, val) { var p = path.split('.'); for (var i = 0; i < p.length - 1; i++) obj = obj[p[i]]; obj[p[p.length - 1]] = val; }
-  function uid() { return 'evt-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5); }
-
-  var actions = {
-    msadd: function () { A.draft.rules.weekMission.missions.push({ title: '本週新任務', habitId: 'h-train', days: 5 }); save(); draw(); },
-    msdel: function (el) { A.draft.rules.weekMission.missions.splice(parseInt(el.getAttribute('data-i'), 10), 1); save(); draw(); },
-    lvadd: function () { var L = A.draft.levels, last = L[L.length - 1]; L.push({ name: '新等級', min: (last ? last.min : 0) + 100 }); save(); draw(); },
-    lvdel: function () { if (A.draft.levels.length > 1) { A.draft.levels.pop(); save(); draw(); } },
-    evadd: function () { A.draft.events.push({ id: uid(), name: '新活動', desc: '', icon: 'star', start: A.draft.period.start, end: A.draft.period.start, kind: 'habit_once', habitId: 'h-train', target: 1, points: 3, enabled: false }); save(); draw(); toast('已新增，設定好後記得勾選「啟用」'); },
-    evdel: function (el) { var i = parseInt(el.getAttribute('data-i'), 10); arm('evdel:' + i, function () { A.draft.events.splice(i, 1); U.iconEv = null; save(); draw(); }); },
-    hbopen: function (el) { var i = parseInt(el.getAttribute('data-i'), 10); U.iconHab = U.iconHab === i ? null : i; draw(); },
-    hbicon: function (el) { habitsOf()[parseInt(el.getAttribute('data-i'), 10)].icon = el.getAttribute('data-icon'); U.iconHab = null; save(); draw(); },
-    evopen: function (el) { var i = parseInt(el.getAttribute('data-i'), 10); U.iconEv = U.iconEv === i ? null : i; draw(); },
-    evicon: function (el) { A.draft.events[parseInt(el.getAttribute('data-i'), 10)].icon = el.getAttribute('data-icon'); U.iconEv = null; save(); draw(); },
-    copysum: function () { copyText(summaryText(), 'sum', function (ok) { toast(ok ? '已複製公告文字' : '請手動全選並複製'); }); },
-    copycfg: function () {
-      if (validate().errs.length) return;
-      var version = A.published + 1, text = JSON.stringify(buildOutput(version), null, 2);
-      A.published = version; save(); U.out = text;
-      U.copied = '已產生第 ' + version + ' 版發佈設定，請貼給 Claude。';
-      draw(); copyText(text, 'out', function (ok) { toast(ok ? '已複製第 ' + version + ' 版發佈設定' : '請手動全選並複製下方內容'); });
-    },
-    impgo: function () {
-      var ta = document.getElementById('imp'); if (ta) U.importText = ta.value;
-      var o; try { o = JSON.parse(U.importText); } catch (e) { U.importError = '這段內容不是有效的發佈設定。'; draw(); return; }
-      if (!o || !o.period || !o.rules || !Array.isArray(o.levels) || !Array.isArray(o.events)) { U.importError = '發佈設定格式不符。'; draw(); return; }
-      var base = defaults(), r = o.rules;
-      A.draft = {
-        rulesEffectiveFrom: DATE_RE.test(o.rulesEffectiveFrom) ? o.rulesEffectiveFrom : '',
-        period: { start: o.period.start, end: o.period.end }, ticketCost: Math.max(1, parseInt(o.ticketCost, 10) || 30),
-        habits: HABIT_DEFAULTS.map(function (d0) { var x = Array.isArray(o.habits) ? o.habits.filter(function (h) { return h && h.id === d0.id; })[0] : null; return x ? { id: d0.id, name: String(x.name || d0.name), desc: String(x.desc || ''), icon: ICONS[x.icon] ? x.icon : d0.icon, workout: d0.workout } : JSON.parse(JSON.stringify(d0)); }),
-        levels: o.levels.map(function (l, i) { return { name: String(l.name || ''), min: i === 0 ? 0 : Number(l.min) || 0 }; }),
-        rules: {
-          perHabit: Number(r.perHabit), allDayBonus: Number(r.allDayBonus),
-          weekWorkout: { days: Number(r.weekWorkout.days), points: Number(r.weekWorkout.points) },
-          weekConsistent: { days: Number(r.weekConsistent.days), perDayMin: Number(r.weekConsistent.perDayMin), points: Number(r.weekConsistent.points) },
-          weekMission: { points: Number(r.weekMission.points), missions: r.weekMission.missions.map(function (m) { return { title: String(m.title || ''), habitId: String(m.habitId), days: Number(m.days) }; }) },
-          streak: { len: Number(r.streak.len), perDayMin: Number(r.streak.perDayMin), points: Number(r.streak.points) }
-        },
-        events: o.events.map(function (e) { return { id: String(e.id), name: String(e.name || ''), desc: String(e.desc || ''), icon: ICONS[e.icon] ? e.icon : 'star', start: e.start, end: e.end, kind: KINDS[e.kind] ? e.kind : 'habit_once', habitId: String(e.habitId || 'h-train'), target: Math.max(1, parseInt(e.target, 10) || 1), points: Number(e.points) || 0, enabled: !!e.enabled }; })
-      };
-      if (!A.draft.levels.length) A.draft.levels = base.levels;
-      A.published = Math.max(1, parseInt(o.configVersion, 10) || 1);
-      U.importText = ''; U.importError = ''; U.out = ''; U.copied = ''; save(); draw(); toast('已載入第 ' + A.published + ' 版設定');
-    },
-    reset: function () { arm('reset', function () { A = { draft: defaults(), published: 2 }; U.out = ''; U.copied = ''; save(); draw(); toast('已還原成預設設定'); }); }
+  var TAB_ICONS = {
+    today: '<path d="M4 12.5l5 5L20 6.5"/>',
+    log: '<rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16"/>',
+    points: '<path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/>',
+    goals: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.8"/>',
+    settings: '<path d="M5 7h14M5 12h14M5 17h14"/><circle cx="9" cy="7" r="2" fill="#FAF8F2"/><circle cx="15" cy="12" r="2" fill="#FAF8F2"/><circle cx="8" cy="17" r="2" fill="#FAF8F2"/>'
   };
-  document.addEventListener('click', function (e) { var el = e.target.closest('[data-act]'); if (!el || el.disabled) return; var fn = actions[el.getAttribute('data-act')]; if (fn) fn(el); });
-  function numVal(t) { var v = parseFloat(t.value); return isNaN(v) ? 0 : Math.max(0, v); }
+  var TABS = [['today', '今天'], ['log', '紀錄'], ['points', '積分'], ['goals', '目標'], ['settings', '設定']];
+  var EVENT_KINDS = {
+    habit_once: '活動期間完成指定習慣（一次）',
+    workout_days: '活動期間累計運動天數',
+    workout_streak: '活動期間連續運動天數',
+    full_days: '活動期間「全部完成」的天數'
+  };
+  var TYPE_LABEL = { hab: '習慣', all: '全勤', wkw: '每週', wk3: '每週', wkm: '任務', str: '連續', evt: '活動' };
+
+  function svgIcon(name) { return '<svg viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[name] || ICONS.star) + '</svg>'; }
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+  /* ---------- 日期工具 ---------- */
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function dkey(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function parse(k) { var p = k.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); }
+  function addDays(d, n) { var x = new Date(d); x.setDate(x.getDate() + n); return x; }
+  function todayKey() { return dkey(new Date()); }
+  function tomorrowKey() { return dkey(addDays(new Date(), 1)); }
+  function weekStart(d) { var x = new Date(d); x.setHours(0, 0, 0, 0); x.setDate(x.getDate() - ((x.getDay() + 6) % 7)); return x; }
+  function weekKey(k) { return dkey(weekStart(parse(k))); }
+  function dayDiff(a, b) { return Math.round((parse(b) - parse(a)) / 86400000); }
+  function prettyDate(k) { var d = parse(k); return (d.getMonth() + 1) + ' 月 ' + d.getDate() + ' 日 週' + WEEKDAY[d.getDay()]; }
+  function shortDate(k) { var d = parse(k); return (d.getMonth() + 1) + '/' + d.getDate(); }
+  function dateTimeStr(iso) { var d = new Date(iso); return d.getFullYear() + '/' + pad(d.getMonth() + 1) + '/' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function rangeDays(a, b) { var out = [], d = parse(a), end = parse(b), n = 0; while (d <= end && n < 400) { out.push(dkey(d)); d = addDays(d, 1); n++; } return out; }
+
+  /* ---------- 狀態、遷移與儲存 ---------- */
+  function mergeRules(def, obj) {
+    var out = clone(def);
+    if (!obj || typeof obj !== 'object') return out;
+    ['perHabit', 'allDayBonus'].forEach(function (k) { if (isFinite(obj[k])) out[k] = Number(obj[k]); });
+    ['weekWorkout', 'weekConsistent', 'weekMission', 'streak'].forEach(function (g) {
+      if (obj[g] && typeof obj[g] === 'object') Object.keys(out[g]).forEach(function (f) {
+        if (f === 'missions') { if (Array.isArray(obj[g].missions)) out[g].missions = obj[g].missions.filter(function (m) { return m && m.habitId; }).map(function (m) { return { title: String(m.title || ''), habitId: String(m.habitId), days: Math.max(1, parseInt(m.days, 10) || 1) }; }); }
+        else if (isFinite(obj[g][f])) out[g][f] = Number(obj[g][f]);
+      });
+    });
+    return out;
+  }
+  function blankBody() { return { date: '', weight: '', muscle: '', fat: '' }; }
+  function freshState() {
+    return {
+      schema: CONFIG.schema,
+      configVersion: STORE.configVersion,
+      member: { name: '', code: '' },
+      habits: clone(CONFIG.habits),
+      logs: {},
+      goals: { weekly: 3, why: '', pre: blankBody(), post: blankBody() },
+      period: clone(CONFIG.period),
+      rulesHistory: [{ from: '1970-01-01', rules: clone(CONFIG.rules) }],
+      levels: clone(CONFIG.levels),
+      ticketCost: CONFIG.ticketCost,
+      events: clone(CONFIG.events),
+      weekMissions: {},
+      ledger: [],
+      redemptions: [],
+      maxLevelCelebrated: 1,
+      onboarded: false,
+      lastBackup: null
+    };
+  }
+  var DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+  function normEvent(e) {
+    return { id: String(e.id), name: String(e.name || ''), desc: String(e.desc || ''), icon: ICONS[e.icon] ? e.icon : 'star', start: DATE_RE.test(e.start) ? e.start : STORE.period.start, end: DATE_RE.test(e.end) ? e.end : STORE.period.start,
+      kind: EVENT_KINDS[e.kind] ? e.kind : 'habit_once', habitId: String(e.habitId || ''), target: Math.max(1, parseInt(e.target, 10) || 1), points: Number(e.points) || 0, enabled: !!e.enabled };
+  }
+  function normLevels(arr) {
+    if (!Array.isArray(arr) || !arr.length) return null;
+    var lv = arr.filter(function (l) { return l && isFinite(l.min); }).map(function (l, i) { return { lv: i + 1, name: String(l.name || ('LV' + (i + 1))), min: Number(l.min) }; });
+    if (!lv.length) return null;
+    lv.sort(function (x, y) { return x.min - y.min; }); lv.forEach(function (l, i) { l.lv = i + 1; }); lv[0].min = 0;
+    return lv;
+  }
+  function normalize(raw) {
+    var s = freshState();
+    if (!raw || typeof raw !== 'object') return s;
+    s.configVersion = parseInt(raw.configVersion, 10) || 0;
+    if (raw.member && typeof raw.member === 'object') s.member = { name: String(raw.member.name || ''), code: String(raw.member.code || '') };
+    if (Array.isArray(raw.habits)) {
+      s.habits = raw.habits.filter(function (h) { return h && typeof h.id === 'string'; }).map(function (h) {
+        return { id: h.id, name: String(h.name || ''), desc: String(h.desc || ''), icon: ICONS[h.icon] ? h.icon : 'star', workout: !!h.workout, active: h.active !== false };
+      });
+    }
+    if (raw.logs && typeof raw.logs === 'object') {
+      Object.keys(raw.logs).forEach(function (k) {
+        if (DATE_RE.test(k) && Array.isArray(raw.logs[k])) {
+          var ids = raw.logs[k].filter(function (x, i, a) { return typeof x === 'string' && a.indexOf(x) === i; });
+          if (ids.length) s.logs[k] = ids;
+        }
+      });
+    }
+    if (raw.goals && typeof raw.goals === 'object') {
+      var g = raw.goals;
+      s.goals.weekly = Math.min(7, Math.max(1, parseInt(g.weekly, 10) || 3));
+      s.goals.why = String(g.why || '');
+      ['pre', 'post'].forEach(function (w) {
+        var b = blankBody();
+        if (g[w] && typeof g[w] === 'object') Object.keys(b).forEach(function (f) { b[f] = g[w][f] == null ? '' : String(g[w][f]); });
+        s.goals[w] = b;
+      });
+    }
+    if (raw.period && DATE_RE.test(raw.period.start) && DATE_RE.test(raw.period.end)) s.period = { start: raw.period.start, end: raw.period.end };
+    if (Array.isArray(raw.rulesHistory) && raw.rulesHistory.length) {
+      var hist = raw.rulesHistory.filter(function (v) { return v && DATE_RE.test(v.from); }).map(function (v) { return { from: v.from, rules: mergeRules(CONFIG.rules, v.rules) }; });
+      if (hist.length) { hist.sort(function (a, b) { return a.from < b.from ? -1 : 1; }); s.rulesHistory = hist; }
+    }
+    var lv = normLevels(raw.levels); if (lv) s.levels = lv;
+    if (isFinite(raw.ticketCost) && raw.ticketCost > 0) s.ticketCost = Math.round(raw.ticketCost);
+    if (Array.isArray(raw.events)) s.events = raw.events.filter(function (e) { return e && typeof e.id === 'string'; }).map(normEvent);
+    if (raw.weekMissions && typeof raw.weekMissions === 'object') {
+      Object.keys(raw.weekMissions).forEach(function (k) {
+        var m = raw.weekMissions[k];
+        if (DATE_RE.test(k) && m && m.habitId) s.weekMissions[k] = { title: String(m.title || ''), habitId: String(m.habitId), days: Math.max(1, parseInt(m.days, 10) || 1), points: Number(m.points) || 0 };
+      });
+    }
+    if (Array.isArray(raw.ledger)) {
+      var seen = {};
+      s.ledger = raw.ledger.filter(function (e) {
+        if (!e || typeof e.id !== 'string' || seen[e.id] || !DATE_RE.test(e.date) || !isFinite(e.points)) return false;
+        seen[e.id] = 1; return true;
+      }).map(function (e) {
+        var o = { id: e.id, type: String(e.type || 'hab'), date: e.date, points: Number(e.points), label: String(e.label || ''), grantedAt: e.grantedAt || new Date().toISOString(), revokedAt: e.revokedAt || null };
+        if (e.w) o.w = e.w; if (e.eventId) o.eventId = e.eventId; if (e.reinstatedAt) o.reinstatedAt = e.reinstatedAt;
+        if (e.evSnap && typeof e.evSnap === 'object' && EVENT_KINDS[e.evSnap.kind] && DATE_RE.test(e.evSnap.start) && DATE_RE.test(e.evSnap.end)) o.evSnap = { kind: e.evSnap.kind, habitId: String(e.evSnap.habitId || ''), target: Math.max(1, parseInt(e.evSnap.target, 10) || 1), start: e.evSnap.start, end: e.evSnap.end };
+        return o;
+      });
+    }
+    if (Array.isArray(raw.redemptions)) {
+      s.redemptions = raw.redemptions.filter(function (r) { return r && typeof r.id === 'string' && isFinite(r.cost) && isFinite(r.tickets); }).map(function (r) {
+        return { id: r.id, ts: r.ts || new Date().toISOString(), tickets: Number(r.tickets), cost: Number(r.cost), rate: Number(r.rate) || s.ticketCost, before: Number(r.before) || 0, after: Number(r.after) || 0 };
+      });
+    }
+    s.maxLevelCelebrated = Math.max(1, parseInt(raw.maxLevelCelebrated, 10) || 1);
+    s.onboarded = !!raw.onboarded;
+    s.lastBackup = raw.lastBackup || null;
+    return s;
+  }
+  var memoryOnly = false, storageOk = true, migratedFromV1 = false;
+  function load() {
+    var raw = null;
+    try { raw = localStorage.getItem(KEY); } catch (e) { storageOk = false; }
+    if (!raw) return freshState();
+    try {
+      var parsed = JSON.parse(raw);
+      if (!parsed || parsed.schema !== CONFIG.schema) {
+        migratedFromV1 = true;
+        try { if (!localStorage.getItem(KEY + '-premigrate')) localStorage.setItem(KEY + '-premigrate', raw); } catch (e2) { /* ignore */ }
+      }
+      return normalize(parsed);
+    } catch (e3) {
+      try { localStorage.setItem(KEY + '-corrupt-' + Date.now(), raw); } catch (e4) { /* ignore */ }
+      return freshState();
+    }
+  }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(S)); }
+    catch (e) { storageOk = false; memoryOnly = true; }
+  }
+  var S = load();
+  var U = { tab: 'today', ptab: 'over', sel: null, calMonth: null, msgN: 0, justToggled: null, confirm: null, backupText: '', importText: '', importError: '', importPreview: null, importOk: false, iconPick: null, redeemN: 1, lastReceipt: null, modal: null, ledgerFilter: 'all', ledgerLimit: 20, recalcInfo: '' };
+
+  /* ---------- 資料查詢 ---------- */
+  function habitMap() { var m = {}; S.habits.forEach(function (h) { m[h.id] = h; }); return m; }
+  function activeHabits() { return S.habits.filter(function (h) { return h.active; }); }
+  function idsOn(d) { return S.logs[d] || []; }
+  function cntOn(d) { return idsOn(d).length; }
+  function didAny(d) { return cntOn(d) > 0; }
+  function workoutOn(d) { var m = habitMap(); return idsOn(d).some(function (id) { return m[id] && m[id].workout; }); }
+  function habitDoneOn(d, id) { return idsOn(d).indexOf(id) >= 0; }
+  function fullDay(d) {
+    var act = activeHabits(); if (!act.length) return false;
+    var set = {}; idsOn(d).forEach(function (id) { set[id] = 1; });
+    return act.every(function (h) { return set[h.id]; });
+  }
+  function ratio(d) {
+    var act = activeHabits(); if (!act.length) return 0;
+    var set = {}; idsOn(d).forEach(function (id) { set[id] = 1; });
+    return act.filter(function (h) { return set[h.id]; }).length / act.length;
+  }
+  function inPeriod(d) { return d >= S.period.start && d <= S.period.end; }
+  function weekWorkouts() { var s = weekStart(new Date()), n = 0; for (var i = 0; i < 7; i++) if (workoutOn(dkey(addDays(s, i)))) n++; return n; }
+  function monthWorkouts() {
+    var now = new Date(), n = 0;
+    Object.keys(S.logs).forEach(function (k) { var d = parse(k); if (d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth() && workoutOn(k)) n++; });
+    return n;
+  }
+  function totalWorkouts() { return Object.keys(S.logs).filter(workoutOn).length; }
+  function totalTicks() { return Object.keys(S.logs).reduce(function (a, k) { return a + cntOn(k); }, 0); }
+  function loggedDays() { return Object.keys(S.logs).filter(didAny).length; }
+  function qualifyMin() { return rulesFor(todayKey()).streak.perDayMin; }
+  function currentStreak() {
+    var d = new Date(), m = qualifyMin();
+    if (cntOn(dkey(d)) < m) d = addDays(d, -1);
+    var n = 0;
+    while (cntOn(dkey(d)) >= m) { n++; d = addDays(d, -1); }
+    return n;
+  }
+  function longestStreak() {
+    var keys = Object.keys(S.logs).sort(), best = 0, run = 0, prev = null, m = qualifyMin();
+    keys.forEach(function (k) {
+      if (cntOn(k) < m) { run = 0; prev = null; return; }
+      run = (prev && dayDiff(prev, k) === 1) ? run + 1 : 1;
+      if (run > best) best = run; prev = k;
+    });
+    return best;
+  }
+  function missedYesterday() { var y = dkey(addDays(new Date(), -1)); return loggedDays() > 0 && !didAny(y) && !didAny(todayKey()); }
+
+  /* ---------- 積分規則（依日期取得當時生效的版本） ---------- */
+  function rulesFor(date) {
+    var r = S.rulesHistory[0].rules;
+    S.rulesHistory.forEach(function (v) { if (v.from <= date) r = v.rules; });
+    return r;
+  }
+
+  /* ---------- 積分引擎：由打卡紀錄推導「應有的獎勵」，再與明細同步 ---------- */
+  function mk(id, type, date, points, label, extra) {
+    var e = { id: id, type: type, date: date, points: points, label: label, grantedAt: new Date().toISOString(), revokedAt: null };
+    if (extra) Object.keys(extra).forEach(function (k) { e[k] = extra[k]; });
+    return e;
+  }
+  function dailyDesired(d) {
+    var out = [];
+    if (!inPeriod(d)) return out;
+    var r = rulesFor(d), m = habitMap();
+    idsOn(d).forEach(function (id) { if (m[id]) out.push(mk('hab|' + d + '|' + id, 'hab', d, r.perHabit, '完成：' + m[id].name)); });
+    if (fullDay(d)) out.push(mk('all|' + d, 'all', d, r.allDayBonus, '當日全部完成'));
+    return out;
+  }
+  function missionFor(ws) {
+    if (S.weekMissions[ws]) return S.weekMissions[ws];
+    var days = rangeDays(ws, dkey(addDays(parse(ws), 6))).filter(inPeriod);
+    if (!days.length) return null;
+    var r = rulesFor(ws), list = r.weekMission.missions;
+    if (!list.length) return null;
+    var base = dkey(weekStart(parse(S.period.start))), idx = Math.max(0, Math.floor(dayDiff(base, ws) / 7)) % list.length, m = list[idx];
+    S.weekMissions[ws] = { title: m.title, habitId: m.habitId, days: m.days, points: r.weekMission.points };
+    return S.weekMissions[ws];
+  }
+  function weeklyDesired(ws) {
+    var out = [], days = rangeDays(ws, dkey(addDays(parse(ws), 6))).filter(inPeriod);
+    if (!days.length) return out;
+    var r = rulesFor(ws), c = 0, i, d;
+    for (i = 0; i < days.length; i++) { d = days[i]; if (workoutOn(d)) { c++; if (c === r.weekWorkout.days) { out.push(mk('wkw|' + ws, 'wkw', d, r.weekWorkout.points, '本週完成 ' + r.weekWorkout.days + ' 個運動日', { w: ws })); break; } } }
+    c = 0;
+    for (i = 0; i < days.length; i++) { d = days[i]; if (cntOn(d) >= r.weekConsistent.perDayMin) { c++; if (c === r.weekConsistent.days) { out.push(mk('wk3|' + ws, 'wk3', d, r.weekConsistent.points, '本週 ' + r.weekConsistent.days + ' 天完成 ' + r.weekConsistent.perDayMin + ' 項以上', { w: ws })); break; } } }
+    var ms = missionFor(ws);
+    if (ms) {
+      c = 0;
+      for (i = 0; i < days.length; i++) { d = days[i]; if (habitDoneOn(d, ms.habitId)) { c++; if (c === ms.days) { out.push(mk('wkm|' + ws, 'wkm', d, ms.points, '每週任務：' + ms.title, { w: ws })); break; } } }
+    }
+    return out;
+  }
+  function streakDesired() {
+    var out = [], keys = Object.keys(S.logs).filter(function (k) { return inPeriod(k); }).sort();
+    if (!keys.length) return out;
+    var days = rangeDays(keys[0], keys[keys.length - 1]), run = 0, start = null;
+    days.forEach(function (d) {
+      var sr = rulesFor(d).streak;
+      if (cntOn(d) >= sr.perDayMin) {
+        run++; if (run === 1) start = d;
+        if (sr.len > 0 && run % sr.len === 0) out.push(mk('str|' + start + '|' + run, 'str', d, sr.points, '連續 ' + run + ' 天每天完成 ' + sr.perDayMin + ' 項以上'));
+      } else { run = 0; start = null; }
+    });
+    return out;
+  }
+  function evalEvent(ev) {
+    var from = ev.start > S.period.start ? ev.start : S.period.start, to = ev.end < S.period.end ? ev.end : S.period.end;
+    var res = { met: false, date: null, progress: 0, target: ev.target };
+    if (from > to) return res;
+    var days = rangeDays(from, to), i, c = 0, best = 0;
+    if (ev.kind === 'habit_once') {
+      res.target = 1;
+      for (i = 0; i < days.length; i++) if (habitDoneOn(days[i], ev.habitId)) { res.met = true; res.date = days[i]; res.progress = 1; break; }
+    } else if (ev.kind === 'workout_days' || ev.kind === 'full_days') {
+      for (i = 0; i < days.length; i++) {
+        if (ev.kind === 'workout_days' ? workoutOn(days[i]) : fullDay(days[i])) { c++; if (c === ev.target && !res.met) { res.met = true; res.date = days[i]; } }
+      }
+      res.progress = Math.min(c, ev.target);
+    } else if (ev.kind === 'workout_streak') {
+      for (i = 0; i < days.length; i++) {
+        if (workoutOn(days[i])) { c++; if (c > best) best = c; if (c === ev.target && !res.met) { res.met = true; res.date = days[i]; } } else c = 0;
+      }
+      res.progress = Math.min(best, ev.target);
+    }
+    return res;
+  }
+  /* 已發過獎勵的活動，之後都用「發放當時的條件」判斷；活動被調整或停用，已拿到的積分都不會被收回 */
+  function evCfg(ev) {
+    var ex = S.ledger.find(function (e) { return e.id === 'evt|' + ev.id; });
+    return ex && ex.evSnap ? Object.assign({}, ev, ex.evSnap) : ev;
+  }
+  function eventDesired(ev) {
+    var cfg = evCfg(ev), has = S.ledger.some(function (e) { return e.id === 'evt|' + ev.id; });
+    if (!ev.enabled && !has) return [];
+    var r = evalEvent(cfg);
+    return r.met ? [mk('evt|' + ev.id, 'evt', r.date, ev.points, '活動：' + ev.name, { eventId: ev.id, evSnap: { kind: cfg.kind, habitId: cfg.habitId, target: cfg.target, start: cfg.start, end: cfg.end } })] : [];
+  }
+  /* 把「應有獎勵」與明細同步：缺的補發、不再成立的標記撤銷、已撤銷又成立的恢復（同一 ID 不會重複發放） */
+  function sync(scopeFn, desired, protectFn) {
+    var now = new Date().toISOString(), map = {}, changed = { added: 0, revoked: 0, restored: 0 };
+    desired.forEach(function (e) { map[e.id] = e; });
+    S.ledger.forEach(function (e) {
+      if (!scopeFn(e)) return;
+      if (map[e.id]) { if (e.revokedAt) { e.revokedAt = null; e.reinstatedAt = now; changed.restored++; } delete map[e.id]; }
+      else if (!e.revokedAt && !(protectFn && protectFn(e))) { e.revokedAt = now; changed.revoked++; }
+    });
+    Object.keys(map).forEach(function (id) { S.ledger.push(map[id]); changed.added++; });
+    return changed;
+  }
+  function addChanged(a, b) { a.added += b.added; a.revoked += b.revoked; a.restored += b.restored; return a; }
+  function reconcileDay(d) { return sync(function (e) { return (e.type === 'hab' || e.type === 'all') && e.date === d; }, dailyDesired(d)); }
+  function reconcileWeek(ws) { return sync(function (e) { return (e.type === 'wkw' || e.type === 'wk3' || e.type === 'wkm') && e.w === ws; }, weeklyDesired(ws)); }
+  function reconcileStreaks() { return sync(function (e) { return e.type === 'str'; }, streakDesired()); }
+  function reconcileEvent(ev, d) {
+    var cfg = evCfg(ev), inRange = d == null || (d >= cfg.start && d <= cfg.end);
+    return sync(function (e) { return e.type === 'evt' && e.eventId === ev.id; }, eventDesired(ev), function () { return !(ev.enabled && inRange); });
+  }
+  function reconcileAfterToggle(d) {
+    var ch = { added: 0, revoked: 0, restored: 0 };
+    addChanged(ch, reconcileDay(d)); addChanged(ch, reconcileWeek(weekKey(d))); addChanged(ch, reconcileStreaks());
+    S.events.forEach(function (ev) { var c = evCfg(ev); if (d >= c.start && d <= c.end) addChanged(ch, reconcileEvent(ev, d)); });
+    return ch;
+  }
+  function reconcileAll() {
+    var ch = { added: 0, revoked: 0, restored: 0 }, dates = {}, weeks = {};
+    Object.keys(S.logs).forEach(function (k) { dates[k] = 1; });
+    S.ledger.forEach(function (e) { if (e.type === 'hab' || e.type === 'all') dates[e.date] = 1; if (e.w) weeks[e.w] = 1; });
+    Object.keys(dates).forEach(function (d) { weeks[weekKey(d)] = 1; addChanged(ch, reconcileDay(d)); });
+    Object.keys(weeks).forEach(function (w) { addChanged(ch, reconcileWeek(w)); });
+    addChanged(ch, reconcileStreaks());
+    S.events.forEach(function (ev) { addChanged(ch, reconcileEvent(ev, null)); });
+    return ch;
+  }
+  function activeLedger() { return S.ledger.filter(function (e) { return !e.revokedAt; }); }
+  function earnedTotal() { return activeLedger().reduce(function (a, e) { return a + e.points; }, 0); }
+  function spentTotal() { return S.redemptions.reduce(function (a, r) { return a + r.cost; }, 0); }
+  function balance() { return earnedTotal() - spentTotal(); }
+  function ticketsTotal() { return S.redemptions.reduce(function (a, r) { return a + r.tickets; }, 0); }
+  function pointsOn(d) { return activeLedger().filter(function (e) { return e.date === d; }).reduce(function (a, e) { return a + e.points; }, 0); }
+  function levelOf(pts) { var cur = S.levels[0]; S.levels.forEach(function (l) { if (pts >= l.min) cur = l; }); return cur; }
+  function nextLevel(pts) { for (var i = 0; i < S.levels.length; i++) if (S.levels[i].min > pts) return S.levels[i]; return null; }
+
+  /* ---------- 鼓勵語 ---------- */
+  var MSG = {
+    pre: ['活動還沒開始，先把好習慣熱身起來，12 月 1 日就會很順手。', '先挑一件最簡單的事開始，剩下的慢慢加。', '你已經決定要照顧自己了，這就是最棒的起點。'],
+    none: ['今天還沒開始也沒關係，先挑最簡單的一個就好。', '先喝一杯水也算開始，小小一步會慢慢累積。', '不用一次做完，今天只要比昨天多照顧自己一點點。', '身體很感謝你願意回來看看它。先勾一個吧。', '好習慣像種小苗，每天澆一點水就會長大。'],
+    some: ['已經動起來了，最難的第一步你完成了。', '又多一個打勾，你正在變成自己喜歡的樣子。', '做一點就是一點，累積的力量比你想的大。', '你今天的認真，身體都記得。', '很好，繼續用你舒服的速度走。'],
+    workout: ['今天有動起來，肌肉正在偷偷變強。', '運動完的你，值得一個大大的讚。', '你把今天的運動做完了，這是送給未來自己的禮物。', '每一次訓練都算數，謝謝今天努力的你。'],
+    all: ['今天全部完成了，好好抱抱自己吧。', '全勾滿的一天，你真的很厲害。', '今天的你，閃閃發亮。晚安前記得放鬆一下。', '全部完成也不用急著明天再更好，休息也是訓練的一部分。'],
+    comeback: ['歡迎回來，回來就是最棒的事。', '中斷一下沒關係，今天重新開始就好。', '好習慣不怕慢，只怕不回來。你回來了。'],
+    past: ['補上紀錄也算數，你有在照顧自己。', '回頭看看，你已經走了好長一段路。']
+  };
+  function hash(str) { var h = 0; for (var i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) | 0; return Math.abs(h); }
+  function pickMessage(k) {
+    var cands, today = todayKey(), n = cntOn(k), total = activeHabits().length, st = currentStreak();
+    if (k !== today) cands = MSG.past.slice();
+    else if (today < S.period.start) cands = MSG.pre.concat(n ? MSG.some : MSG.none);
+    else {
+      cands = (total && fullDay(k)) ? MSG.all.slice() : n > 0 ? MSG.some.slice() : MSG.none.slice();
+      if (workoutOn(k)) cands = cands.concat(MSG.workout);
+      if (n === 0 && missedYesterday()) cands = MSG.comeback.concat(MSG.none);
+      if (n > 0 && st >= 3) cands.push('已經連續 ' + st + ' 天達標，這份穩定很了不起。');
+      if (n > 0 && (st === 7 || st === 14 || st === 30 || st === 60)) cands = ['連續 ' + st + ' 天達標了！你正在把好習慣變成日常。'];
+    }
+    return cands[(hash(k + n + (workoutOn(k) ? 1 : 0)) + U.msgN) % cands.length];
+  }
+
+  /* ---------- 小元件 ---------- */
+  function ring(p, size, centerHtml) {
+    var r = (size - 12) / 2, c = 2 * Math.PI * r, full = p >= 1;
+    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 ' + size + ' ' + size + '" role="img" aria-label="完成 ' + Math.round(p * 100) + '%">' +
+      '<circle cx="' + size / 2 + '" cy="' + size / 2 + '" r="' + r + '" fill="none" stroke="#EAE6DE" stroke-width="8"/>' +
+      '<circle cx="' + size / 2 + '" cy="' + size / 2 + '" r="' + r + '" fill="none" stroke="' + (full ? '#E8B9AA' : '#527568') + '" stroke-width="8" stroke-linecap="round" stroke-dasharray="' + (c * Math.min(1, p)).toFixed(1) + ' ' + c.toFixed(1) + '" transform="rotate(-90 ' + size / 2 + ' ' + size / 2 + ')"/>' +
+      '<text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-family="Noto Sans TC, sans-serif" font-weight="700" font-size="' + Math.round(size * 0.27) + '" fill="#37352F">' + centerHtml + '</text></svg>';
+  }
+  function logoSvg() { return '<svg class="logo" viewBox="0 0 512 512" role="img" aria-label="女神養成所"><rect width="512" height="512" rx="116" fill="#527568"/><circle cx="256" cy="256" r="206" fill="#A9C6B5" opacity=".28"/><path d="M150 322 L128 188 L204 244 L256 150 L308 244 L384 188 L362 322 Z" fill="#FAF8F2" stroke="#FAF8F2" stroke-width="22" stroke-linejoin="round"/><circle cx="128" cy="180" r="19" fill="#E8B9AA"/><circle cx="256" cy="140" r="21" fill="#E8B9AA"/><circle cx="384" cy="180" r="19" fill="#E8B9AA"/><rect x="150" y="346" width="212" height="22" rx="11" fill="#C7DCE4"/><rect x="104" y="318" width="30" height="78" rx="12" fill="#C7DCE4"/><rect x="72" y="334" width="26" height="46" rx="10" fill="#C7DCE4"/><rect x="378" y="318" width="30" height="78" rx="12" fill="#C7DCE4"/><rect x="414" y="334" width="26" height="46" rx="10" fill="#C7DCE4"/><path d="M256 232c-2-6-12-6-12 2 0 7 12 14 12 14s12-7 12-14c0-8-10-8-12-2z" fill="#E8B9AA"/></svg>'; }
+  function mascot(p, anyTick) {
+    var stage = p >= 1 ? 3 : p >= 0.5 ? 2 : anyTick ? 1 : 0;
+    var eyes = anyTick ? '<circle cx="39" cy="62" r="2.8" fill="#37352F"/><circle cx="57" cy="62" r="2.8" fill="#37352F"/>' : '<path d="M36 62h6M54 62h6" stroke="#37352F" stroke-width="2.6" stroke-linecap="round"/>';
+    var mouth = anyTick ? '<path d="M42 69q6 6 12 0" stroke="#37352F" stroke-width="2.4" fill="none" stroke-linecap="round"/>' : '<path d="M44 70h8" stroke="#37352F" stroke-width="2.4" stroke-linecap="round"/>';
+    var plant = '';
+    if (stage === 0) plant = '<path d="M48 40V32" stroke="#527568" stroke-width="3" stroke-linecap="round"/><path d="M48 33c0-5 4-7 8-6 0 5-3 7-8 6z" fill="#A9C6B5"/>';
+    if (stage === 1) plant = '<path d="M48 40V28" stroke="#527568" stroke-width="3" stroke-linecap="round"/><path d="M48 30c0-6 5-9 11-8 0 6-4 9-11 8z" fill="#A9C6B5"/><path d="M48 33c0-5-4-8-9-7 0 5 3 8 9 7z" fill="#527568"/>';
+    if (stage === 2) plant = '<path d="M48 40V22" stroke="#527568" stroke-width="3" stroke-linecap="round"/><path d="M48 26c0-7 6-11 13-9 0 7-5 11-13 9z" fill="#A9C6B5"/><path d="M48 31c0-6-6-10-12-8 0 7 5 10 12 8z" fill="#527568"/><path d="M48 21c-1-5 2-9 6-10 1 5-1 9-6 10z" fill="#A9C6B5"/>';
+    if (stage === 3) plant = '<path d="M48 40V24" stroke="#527568" stroke-width="3" stroke-linecap="round"/><path d="M48 32c0-6 6-10 13-8 0 7-5 10-13 8z" fill="#A9C6B5"/><path d="M48 34c0-6-6-10-12-8 0 7 5 10 12 8z" fill="#527568"/><g transform="translate(48 17)"><circle cx="0" cy="-8" r="5" fill="#C7DCE4"/><circle cx="8" cy="-2" r="5" fill="#C7DCE4"/><circle cx="5" cy="7" r="5" fill="#C7DCE4"/><circle cx="-5" cy="7" r="5" fill="#C7DCE4"/><circle cx="-8" cy="-2" r="5" fill="#C7DCE4"/><circle r="4.5" fill="#E8B9AA"/></g>';
+    return '<svg class="mascot" viewBox="0 0 96 96" aria-hidden="true">' + plant + '<ellipse cx="48" cy="66" rx="27" ry="24" fill="#E8B9AA"/>' + eyes + '<circle cx="32" cy="69" r="4" fill="#fff" opacity=".5"/><circle cx="64" cy="69" r="4" fill="#fff" opacity=".5"/>' + mouth + '</svg>';
+  }
+  var CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var ARROW_L = '<svg viewBox="0 0 24 24" fill="none" stroke="#37352F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>';
+  var ARROW_R = '<svg viewBox="0 0 24 24" fill="none" stroke="#37352F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>';
+
+  function contestChip() {
+    var t = todayKey();
+    if (t < S.period.start) return '<span class="chip">距離開始 ' + dayDiff(t, S.period.start) + ' 天</span>';
+    if (t > S.period.end) return '<span class="chip peach">活動已結束</span>';
+    return '<span class="chip">活動第 ' + (dayDiff(S.period.start, t) + 1) + ' / ' + (dayDiff(S.period.start, S.period.end) + 1) + ' 天</span>';
+  }
+  function levelCard() {
+    var e = earnedTotal(), lv = levelOf(e), nx = nextLevel(e), p = nx ? (e - lv.min) / (nx.min - lv.min) : 1;
+    return '<div class="card"><div class="levelcard"><div class="lvbadge" aria-hidden="true">LV' + lv.lv + '</div><div class="grow"><div class="lvname">' + esc(lv.name) + '</div>' +
+      '<div class="small muted">' + (nx ? '再 ' + (nx.min - e) + ' 分升級「' + esc(nx.name) + '」' : '已達最高等級，太閃耀了') + '</div>' +
+      '<div class="bar"><i class="' + (!nx ? 'full' : '') + '" style="width:' + Math.round(p * 100) + '%"></i></div></div></div></div>';
+  }
+  function progressBar(n, t) { return '<div class="bar"><i class="' + (n >= t ? 'full' : '') + '" style="width:' + Math.min(100, t ? n / t * 100 : 0) + '%"></i></div>'; }
+  function weekProgressFor(ms, ws) {
+    var days = rangeDays(ws, dkey(addDays(parse(ws), 6))).filter(inPeriod), c = 0;
+    days.forEach(function (d) { if (habitDoneOn(d, ms.habitId)) c++; });
+    return c;
+  }
+  function missionCardHtml() {
+    var ws = weekKey(todayKey()), ms = missionFor(ws);
+    if (!ms) return '';
+    var c = weekProgressFor(ms, ws), got = S.ledger.some(function (e) { return e.id === 'wkm|' + ws && !e.revokedAt; });
+    return '<div class="card"><div class="card-head"><h2>本週任務</h2>' + (got ? '<span class="tagpill bonus">已完成 +' + ms.points + '</span>' : '<span class="tagpill">完成 +' + ms.points + ' 分</span>') + '</div>' +
+      '<div class="b">' + esc(ms.title) + '</div><div class="small muted">進度 ' + Math.min(c, ms.days) + ' / ' + ms.days + ' 天</div>' + progressBar(c, ms.days) + '</div>';
+  }
+  function eventCardHtml(ev, detail) {
+    var r = evalEvent(ev), t = todayKey(), state = t < ev.start ? '即將開始' : t > ev.end ? '已結束' : '進行中';
+    var got = S.ledger.some(function (e) { return e.id === 'evt|' + ev.id && !e.revokedAt; });
+    return '<div class="row" style="align-items:flex-start"><span class="ico">' + svgIcon(ev.icon) + '</span><div class="grow"><div class="row wrap-row" style="gap:6px"><span class="b">' + esc(ev.name) + '</span>' +
+      (got ? '<span class="tagpill bonus">已獲得 +' + ev.points + '</span>' : '<span class="tagpill' + (state === '已結束' ? ' off' : '') + '">' + state + ' · +' + ev.points + ' 分</span>') + '</div>' +
+      '<div class="small muted">' + shortDate(ev.start) + (ev.end !== ev.start ? ' – ' + shortDate(ev.end) : '') + (ev.desc ? ' · ' + esc(ev.desc) : '') + '</div>' +
+      (detail ? '<div class="small muted">進度 ' + r.progress + ' / ' + r.target + '</div>' + progressBar(r.progress, r.target) : '') + '</div></div>';
+  }
+
+  /* ---------- 今天 ---------- */
+  function viewToday() {
+    var k = U.sel || todayKey(), isToday = k === todayKey();
+    var act = activeHabits(), set = {}; idsOn(k).forEach(function (id) { set[id] = 1; });
+    var n = act.filter(function (h) { return set[h.id]; }).length, p = act.length ? n / act.length : 0;
+    var wk = weekWorkouts(), target = S.goals.weekly, mo = monthWorkouts(), tot = totalWorkouts(), st = currentStreak(), e = earnedTotal();
+    var html = '<div class="stack">';
+    html += '<div class="top"><div class="brand">' + logoSvg() + '<div><div class="eyebrow">2026 女神增肌減脂賽</div><h1>女神養成所</h1></div></div>' + contestChip() + '</div>';
+    if (!storageOk) html += '<div class="card note warn">這個瀏覽器目前無法儲存資料，重新整理後紀錄會消失。請改用一般（非無痕）視窗開啟。</div>';
+    html += '<div class="card hero">' + mascot(p, n > 0) + '<div class="grow"><p class="msg">' + esc(pickMessage(k)) + '</p><div class="row wrap-row" style="margin-top:8px;gap:14px"><button class="link-btn" data-act="msg">換一句</button>' + (st > 0 ? '<span class="small muted">連續達標 ' + st + ' 天</span>' : '') + '</div></div></div>';
+    html += levelCard();
+    html += '<div class="stats"><div class="card stat"><span class="label">累積積分</span><span class="big">' + e + '</span></div><div class="card stat"><span class="label">可用積分</span><span class="big">' + balance() + '</span></div><div class="card stat"><span class="label">連續達標</span><span class="big">' + st + '<small>天</small></span></div></div>';
+    html += '<div class="stats"><div class="card stat"><span class="label">本週運動</span><span class="big">' + wk + '<small>/ ' + target + ' 天</small></span>' + progressBar(wk, target) + '</div>' +
+      '<div class="card stat"><span class="label">本月運動</span><span class="big">' + mo + '<small>天</small></span></div><div class="card stat"><span class="label">累計運動</span><span class="big">' + tot + '<small>次</small></span></div></div>';
+    html += '<div class="datenav"><button class="iconbtn" data-act="prevday" aria-label="前一天">' + ARROW_L + '</button><div class="date">' + (isToday ? '今天 · ' : '') + prettyDate(k) + '</div><button class="iconbtn" data-act="nextday" aria-label="後一天"' + (isToday ? ' disabled' : '') + '>' + ARROW_R + '</button></div>';
+    if (!isToday) html += '<div style="text-align:center"><button class="link-btn" data-act="gotoday">回到今天</button></div>';
+    if (!inPeriod(k)) html += '<div class="card note">' + (k < S.period.start ? '活動 ' + prettyDate(S.period.start) + ' 開始，現在可以先練習打卡，不計分。' : '這天不在活動期間內，打卡不計分。') + '</div>';
+    var pts = pointsOn(k);
+    html += '<div class="card"><div class="card-head"><div><h2>' + (isToday ? '今日份好習慣' : '這天的好習慣') + '</h2><div class="small muted">' + (inPeriod(k) ? '這天獲得 ' + pts + ' 分' : '不計分') + '</div></div><div>' + ring(p, 56, n + '/' + act.length) + '</div></div>';
+    if (!act.length) html += '<div class="empty">還沒有好習慣。<br><button class="link-btn" data-act="tab" data-tab="settings">到「設定」新增幾個</button></div>';
+    else html += '<div class="habits">' + act.map(function (h) {
+      var done = !!set[h.id];
+      return '<button class="habit' + (done ? ' done' : '') + (U.justToggled === h.id ? ' pop' : '') + '" data-act="toggle" data-id="' + esc(h.id) + '" aria-pressed="' + done + '"><span class="ico">' + svgIcon(h.icon) + '</span><span class="name">' + esc(h.name || '（未命名）') + (h.workout ? '<span class="tag">算運動</span>' : '') + (h.desc ? '<span class="desc">' + esc(h.desc) + '</span>' : '') + '</span><span class="check">' + CHECK + '</span></button>';
+    }).join('') + '</div>';
+    html += '</div>';
+    if (todayKey() <= S.period.end) html += missionCardHtml();
+    var evs = S.events.filter(function (ev) { return ev.enabled && todayKey() >= ev.start && todayKey() <= ev.end; });
+    if (evs.length) html += '<div class="card"><div class="card-head"><h2>今日活動加碼</h2></div><div class="stack">' + evs.map(function (ev) { return eventCardHtml(ev, true); }).join('') + '</div></div>';
+    if (loggedDays() >= 3) {
+      var lb = S.lastBackup ? dayDiff(dkey(new Date(S.lastBackup)), todayKey()) : 999;
+      if (lb > 7) html += '<div class="card note">你的積分和紀錄只存在這支手機的瀏覽器裡，建議到「設定」備份一份，換手機或清除瀏覽器資料時才不會遺失。<br><button class="link-btn" data-act="tab" data-tab="settings">前往備份</button></div>';
+    }
+    return html + '</div>';
+  }
+
+  /* ---------- 紀錄 ---------- */
+  function calendarHtml() {
+    var m = U.calMonth, y = m.getFullYear(), mo = m.getMonth(), first = new Date(y, mo, 1), off = (first.getDay() + 6) % 7, days = new Date(y, mo + 1, 0).getDate(), tk = todayKey(), cells = '';
+    ['一', '二', '三', '四', '五', '六', '日'].forEach(function (w) { cells += '<div class="h">' + w + '</div>'; });
+    for (var i = 0; i < off; i++) cells += '<div class="cal-cell empty-cell"></div>';
+    for (var d = 1; d <= days; d++) {
+      var k = y + '-' + pad(mo + 1) + '-' + pad(d), r = ratio(k), future = k > tk, lvl = didAny(k) ? (r >= 1 ? 3 : r >= 0.5 ? 2 : 1) : 0;
+      cells += '<button class="cal-cell' + (lvl ? ' l' + lvl : '') + (future ? ' future' : '') + (k === tk ? ' today' : '') + (k === U.sel ? ' sel' : '') + '"' + (future ? ' disabled' : ' data-act="pick" data-key="' + k + '"') + ' aria-label="' + (mo + 1) + '月' + d + '日">' + d + '<span class="wk' + (workoutOn(k) ? '' : ' none') + '"></span></button>';
+    }
+    return '<div class="card-head"><button class="iconbtn" data-act="calprev" aria-label="上個月">' + ARROW_L + '</button><h2>' + y + ' 年 ' + (mo + 1) + ' 月</h2><button class="iconbtn" data-act="calnext" aria-label="下個月">' + ARROW_R + '</button></div><div class="cal">' + cells + '</div>' +
+      '<div class="legend" style="margin-top:12px"><span><i style="background:#EDF3EF"></i>有打勾</span><span><i style="background:#D5E4DB"></i>一半以上</span><span><i style="background:#A9C6B5"></i>全部完成</span><span><i style="background:#E8B9AA;border-radius:50%"></i>有運動</span></div>';
+  }
+  function weekHistoryHtml() {
+    var keys = Object.keys(S.logs).sort(); if (!keys.length) return '';
+    var weeks = {}; keys.forEach(function (k) { weeks[weekKey(k)] = 1; });
+    var list = Object.keys(weeks).sort().reverse().slice(0, 8), led = activeLedger();
+    return '<div class="card"><div class="card-head"><h2>每週回顧</h2><span class="small muted">最近 8 週</span></div><div class="ledger">' + list.map(function (ws) {
+      var days = rangeDays(ws, dkey(addDays(parse(ws), 6))), wo = days.filter(workoutOn).length, ticks = days.reduce(function (a, d) { return a + cntOn(d); }, 0);
+      var pts = led.filter(function (e) { return e.date >= ws && e.date <= days[6]; }).reduce(function (a, e) { return a + e.points; }, 0);
+      return '<div class="lrow"><div class="grow"><div class="b">' + shortDate(ws) + ' – ' + shortDate(days[6]) + '</div><div class="ld">運動 ' + wo + ' 天 · 打勾 ' + ticks + ' 次</div></div><div class="pts">+' + pts + '</div></div>';
+    }).join('') + '</div></div>';
+  }
+  function viewLog() {
+    var s = weekStart(new Date()), tk = todayKey(), strip = '';
+    for (var i = 0; i < 7; i++) { var k = dkey(addDays(s, i)), cls = workoutOn(k) ? 'workout' : didAny(k) ? 'on' : ''; strip += '<div class="wd"><span>' + ['一', '二', '三', '四', '五', '六', '日'][i] + '</span><div class="dot ' + cls + (k === tk ? ' today' : '') + '">' + (cls ? CHECK : '') + '</div></div>'; }
+    var html = '<div class="stack"><div class="top"><div><div class="eyebrow">累積就是力量</div><h1>我的紀錄</h1></div>' + contestChip() + '</div>';
+    html += '<div class="stats"><div class="card stat"><span class="label">目前連續達標</span><span class="big">' + currentStreak() + '<small>天</small></span></div><div class="card stat"><span class="label">最長連續</span><span class="big">' + longestStreak() + '<small>天</small></span></div><div class="card stat"><span class="label">累計打勾</span><span class="big">' + totalTicks() + '<small>次</small></span></div></div>';
+    html += '<div class="card"><div class="card-head"><h2>本週</h2><span class="small muted">運動 ' + weekWorkouts() + ' / ' + S.goals.weekly + ' 天</span></div><div class="weekstrip">' + strip + '</div></div>';
+    html += '<div class="card">' + calendarHtml() + '<p class="small muted" style="margin-top:10px">點一天可以查看或補打卡。</p></div>' + weekHistoryHtml() + '</div>';
+    return html;
+  }
+
+  /* ---------- 積分 ---------- */
+  function rulesSummaryHtml(r) {
+    return '<ul class="rules"><li>每完成 1 項每日習慣 +' + r.perHabit + '</li><li>當日全部完成，額外 +' + r.allDayBonus + '</li><li>每週完成至少 ' + r.weekWorkout.days + ' 個不同運動日 +' + r.weekWorkout.points + '</li>' +
+      '<li>每週至少 ' + r.weekConsistent.days + ' 天各完成 ' + r.weekConsistent.perDayMin + ' 項以上 +' + r.weekConsistent.points + '</li><li>完成每週指定任務 +' + r.weekMission.points + '</li><li>每連續 ' + r.streak.len + ' 天、每天完成 ' + r.streak.perDayMin + ' 項以上 +' + r.streak.points + '</li>' +
+      '<li>特殊活動依活動說明加碼</li><li>' + S.ticketCost + ' 積分可兌換 1 張抽獎券</li></ul>';
+  }
+  function rulesCardBody() {
+    var today = todayKey(), html = rulesSummaryHtml(rulesFor(today)), nxt = S.rulesHistory.filter(function (v) { return v.from > today; })[0];
+    if (nxt) html += '<div class="small b" style="margin:12px 0 4px">' + shortDate(nxt.from) + ' 起的新規則</div>' + rulesSummaryHtml(nxt.rules);
+    return html;
+  }
+  var BADGES = [
+    { name: '第一個勾', icon: 'check', test: function () { return totalTicks() >= 1; } },
+    { name: '連續 3 天', icon: 'flame', test: function () { return longestStreak() >= 3; } },
+    { name: '連續 7 天', icon: 'flame', test: function () { return longestStreak() >= 7; } },
+    { name: '運動 10 天', icon: 'dumbbell', test: function () { return totalWorkouts() >= 10; } },
+    { name: '累積 100 分', icon: 'star', test: function () { return earnedTotal() >= 100; } },
+    { name: '完成週任務', icon: 'flag', test: function () { return activeLedger().some(function (e) { return e.type === 'wkm'; }); } },
+    { name: '活動加碼', icon: 'gift', test: function () { return activeLedger().some(function (e) { return e.type === 'evt'; }); } },
+    { name: '第一張券', icon: 'ticket', test: function () { return ticketsTotal() >= 1; } }
+  ];
+  function badgesHtml() {
+    return '<div class="badges">' + BADGES.map(function (b) {
+      var on = b.test(), icon = b.icon === 'check' ? '<path d="M5 12.5l4.5 4.5L19 7.5"/>' : ICONS[b.icon];
+      return '<div class="badge' + (on ? ' on' : '') + '"><span class="bico"><svg viewBox="0 0 24 24" aria-hidden="true">' + icon + '</svg></span><span>' + b.name + '</span></div>';
+    }).join('') + '</div>';
+  }
+  function ptsOverview() {
+    var e = earnedTotal(), html = levelCard();
+    html += '<div class="stats"><div class="card stat"><span class="label">累積積分</span><span class="big">' + e + '</span></div><div class="card stat"><span class="label">可用積分</span><span class="big">' + balance() + '</span></div><div class="card stat"><span class="label">已兌換</span><span class="big">' + ticketsTotal() + '<small>張</small></span></div></div>';
+    html += missionCardHtml();
+    var evs = S.events.filter(function (ev) { return ev.enabled; }).sort(function (a, b) { return a.start < b.start ? -1 : 1; });
+    html += '<div class="card"><div class="card-head"><h2>特殊活動</h2></div>' + (evs.length ? '<div class="stack">' + evs.map(function (ev) { return eventCardHtml(ev, true); }).join('') + '</div>' : '<div class="empty">目前沒有開啟的活動。</div>') + '</div>';
+    html += '<div class="card"><div class="card-head"><h2>成就</h2></div>' + badgesHtml() + '</div>';
+    html += '<div class="card"><div class="card-head"><h2>積分怎麼算</h2></div>' + rulesCardBody() + '</div>';
+    return html;
+  }
+  function ledgerRowHtml(e) {
+    var rev = !!e.revokedAt;
+    return '<div class="lrow' + (rev ? ' rev' : '') + '"><div class="grow"><div class="lt">' + esc(e.label) + '</div><div class="ld">' + shortDate(e.date) + ' · <span class="tagpill' + (e.type === 'hab' ? '' : ' bonus') + '">' + (TYPE_LABEL[e.type] || '其他') + '</span>' + (rev ? ' <span class="tagpill off">已撤銷</span>' : '') + '</div></div><div class="pts">+' + e.points + '</div></div>';
+  }
+  function ptsLedger() {
+    var list = S.ledger.slice().sort(function (a, b) { return a.date === b.date ? (a.grantedAt < b.grantedAt ? 1 : -1) : (a.date < b.date ? 1 : -1); });
+    var wk = weekKey(todayKey()), mo = todayKey().slice(0, 7);
+    if (U.ledgerFilter === 'week') list = list.filter(function (e) { return e.date >= wk; });
+    if (U.ledgerFilter === 'month') list = list.filter(function (e) { return e.date.slice(0, 7) === mo; });
+    if (U.ledgerFilter === 'revoked') list = list.filter(function (e) { return !!e.revokedAt; });
+    var shown = list.slice(0, U.ledgerLimit), sum = list.filter(function (e) { return !e.revokedAt; }).reduce(function (a, e) { return a + e.points; }, 0);
+    var opt = function (v, t) { return '<option value="' + v + '"' + (U.ledgerFilter === v ? ' selected' : '') + '>' + t + '</option>'; };
+    return '<div class="card"><div class="card-head"><h2>積分明細</h2><select id="lfilter" style="width:auto" aria-label="篩選">' + opt('all', '全部') + opt('week', '本週') + opt('month', '本月') + opt('revoked', '已撤銷') + '</select></div>' +
+      '<div class="sumrow"><span class="muted">此範圍有效積分</span><span class="v">+' + sum + '</span></div>' +
+      (shown.length ? '<div class="ledger">' + shown.map(ledgerRowHtml).join('') + '</div>' : '<div class="empty">還沒有積分明細。活動期間內打勾就會出現。</div>') +
+      (list.length > shown.length ? '<div style="text-align:center;margin-top:8px"><button class="link-btn" data-act="more">顯示更多（還有 ' + (list.length - shown.length) + ' 筆）</button></div>' : '') + '</div>' +
+      '<p class="small muted">取消打勾時，對應的積分會標示「已撤銷」並從總分扣除；再次打勾會恢復，不會重複發放。</p>';
+  }
+  function ptsRedeem() {
+    var bal = balance(), cost = S.ticketCost, max = Math.floor(bal / cost), n = Math.min(Math.max(1, U.redeemN), Math.max(1, max)), lv = levelOf(earnedTotal());
+    var html = '<div class="card"><div class="card-head"><h2>出示給教練</h2><span class="small muted">' + dateTimeStr(new Date().toISOString()) + '</span></div>' +
+      '<div class="sumrow"><span class="muted">會員</span><span class="v">' + esc(S.member.name || '（尚未填寫）') + (S.member.code ? ' · ' + esc(S.member.code) : '') + '</span></div>' +
+      '<div class="kv" style="margin-top:6px"><div><div class="k">累積積分</div><div class="v">' + earnedTotal() + '</div></div><div><div class="k">可用積分</div><div class="v">' + bal + '</div></div><div><div class="k">女神等級</div><div class="v" style="font-size:17px">LV' + lv.lv + ' ' + esc(lv.name) + '</div></div><div><div class="k">已兌換抽獎券</div><div class="v">' + ticketsTotal() + ' 張</div></div></div></div>';
+    html += '<div class="card"><div class="card-head"><h2>兌換抽獎券</h2><span class="small muted">' + cost + ' 積分 = 1 張</span></div>';
+    if (max < 1) html += '<div class="empty">積分不足，還差 ' + (cost - bal) + ' 分可以兌換 1 張。</div>';
+    else {
+      html += '<div class="row" style="justify-content:center;gap:16px"><button class="iconbtn" data-act="rminus" aria-label="減少張數"' + (n <= 1 ? ' disabled' : '') + '>−</button><div class="stepper"><span class="v" id="rn">' + n + '</span><span class="muted">張</span></div><button class="iconbtn" data-act="rplus" aria-label="增加張數"' + (n >= max ? ' disabled' : '') + '>+</button></div>' +
+        '<div style="margin-top:12px"><div class="sumrow"><span class="muted">兌換前積分</span><span class="v">' + bal + '</span></div><div class="sumrow"><span class="muted">扣除</span><span class="v">−' + (n * cost) + '</span></div><div class="sumrow"><span class="muted">兌換後餘額</span><span class="v">' + (bal - n * cost) + '</span></div></div>' +
+        '<p class="small muted" style="margin:8px 0">請先把這個畫面給教練確認，教練同意後再由你按下扣點。扣點後無法取消。</p>' +
+        '<button class="btn block' + (U.confirm === 'redeem' ? ' armed' : '') + '" data-act="redeemgo">' + (U.confirm === 'redeem' ? '再按一次：教練已確認，扣 ' + (n * cost) + ' 分' : '兌換 ' + n + ' 張抽獎券') + '</button>';
+    }
+    html += '</div>';
+    if (U.lastReceipt) {
+      var r = U.lastReceipt;
+      html += '<div class="card note warn"><div class="b">兌換完成，請教練發放實體抽獎券</div><div class="small">編號 ' + esc(r.id) + ' · ' + dateTimeStr(r.ts) + '<br>' + r.tickets + ' 張，扣 ' + r.cost + ' 分（' + r.before + ' → ' + r.after + '）</div></div>';
+    }
+    html += '<div class="card"><div class="card-head"><h2>兌換紀錄</h2><span class="small muted">共 ' + ticketsTotal() + ' 張</span></div>' + (S.redemptions.length ? '<div class="ledger">' + S.redemptions.slice().reverse().map(function (r) {
+      return '<div class="lrow"><div class="grow"><div class="lt">' + r.tickets + ' 張抽獎券</div><div class="ld">' + dateTimeStr(r.ts) + ' · ' + r.before + ' → ' + r.after + ' · ' + esc(r.id) + '</div></div><div class="pts">−' + r.cost + '</div></div>';
+    }).join('') + '</div>' : '<div class="empty">還沒有兌換紀錄。</div>') + '</div>';
+    return html;
+  }
+  function viewPoints() {
+    var seg = [['over', '總覽'], ['ledger', '明細'], ['redeem', '兌換']].map(function (s) { return '<button class="' + (U.ptab === s[0] ? 'on' : '') + '" data-act="ptab" data-p="' + s[0] + '">' + s[1] + '</button>'; }).join('');
+    var body = U.ptab === 'ledger' ? ptsLedger() : U.ptab === 'redeem' ? ptsRedeem() : ptsOverview();
+    return '<div class="stack"><div class="top"><div><div class="eyebrow">累積你的閃耀</div><h1>我的積分</h1></div>' + contestChip() + '</div><div class="seg" role="tablist">' + seg + '</div>' + body + '</div>';
+  }
+
+  /* ---------- 目標 ---------- */
+  function fmtSigned(v, unit, digits) { return isNaN(v) ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(digits) + unit; }
+  function num(v) { return v === '' || v == null ? NaN : parseFloat(v); }
+  function resultsHtml() {
+    var p = S.goals.pre, q = S.goals.post, pm = num(p.muscle), qm = num(q.muscle), pf = num(p.fat), qf = num(q.fat);
+    var mk2 = qm - pm, mp = pm > 0 ? mk2 / pm * 100 : NaN, fk = pf - qf, fp = pf > 0 ? fk / pf * 100 : NaN, mOk = !isNaN(mk2), fOk = !isNaN(fk);
+    return '<div class="grid2"><div class="result"><div class="k">增肌（骨骼肌）</div><div class="v">' + (mOk ? fmtSigned(mk2, ' kg', 1) : '—') + '</div><div class="small muted">' + (mOk ? '比例 ' + fmtSigned(mp, '%', 1) : '後測後自動計算') + '</div></div>' +
+      '<div class="result peach"><div class="k">減脂（體脂肪）</div><div class="v">' + (fOk ? fmtSigned(fk, ' kg', 1) : '—') + '</div><div class="small muted">' + (fOk ? '比例 ' + fmtSigned(fp, '%', 1) : '後測後自動計算') + '</div></div></div>' +
+      '<p class="small muted" style="margin-top:10px">增肌比例 = 增加的骨骼肌 ÷ 首測骨骼肌；減脂比例 = 減少的體脂肪 ÷ 首測體脂肪。實際計分方式請以主辦單位公告為準。</p>';
+  }
+  var BODY_LBL = { weight: '體重', muscle: '骨骼肌', fat: '體脂肪' };
+  var WHY_CHIPS = ['有力氣', '更有自信', '穿得下喜歡的衣服', '睡得更好', '陪家人更久', '好好照顧自己'];
+  function chgText(f) { var d = num(S.goals.post[f]) - num(S.goals.pre[f]); return isNaN(d) ? '—' : fmtSigned(d, '', 1); }
+  function updateChg() { Object.keys(BODY_LBL).forEach(function (f) { var el = document.getElementById('chg-' + f); if (el) el.textContent = chgText(f); }); }
+  function bodyTableHtml() {
+    var p = S.goals.pre, q = S.goals.post;
+    function inp(w, f) { return '<input type="number" step="0.1" inputmode="decimal" id="b-' + w + '-' + f + '" data-body="' + w + '" data-f="' + f + '" value="' + esc(S.goals[w][f]) + '" aria-label="' + (w === 'pre' ? '首測' : '後測') + BODY_LBL[f] + '（公斤）">'; }
+    var h = '<div class="grid2" style="margin-bottom:12px"><label class="field">首測日期<input type="date" id="b-pre-date" data-body="pre" data-f="date" value="' + esc(p.date) + '"></label><label class="field">後測日期<input type="date" id="b-post-date" data-body="post" data-f="date" value="' + esc(q.date) + '"></label></div>';
+    h += '<div class="bt"><span></span><span class="bh">首測 12 月</span><span class="bh">後測 3 月</span><span class="bh">變化</span>';
+    Object.keys(BODY_LBL).forEach(function (f) { h += '<span class="bl">' + BODY_LBL[f] + '<small>kg</small></span>' + inp('pre', f) + inp('post', f) + '<span class="chg" id="chg-' + f + '">' + chgText(f) + '</span>'; });
+    return h + '</div><p class="small muted" style="margin-top:10px">InBody 的數字照著填就好，後測填完，變化會自動算出來。</p>';
+  }
+  function viewGoals() {
+    var t = todayKey(), total = dayDiff(S.period.start, S.period.end) + 1, done = t < S.period.start ? 0 : Math.min(total, dayDiff(S.period.start, t) + 1), left = Math.max(0, total - done);
+    var s = weekStart(new Date()), tk = t, strip = '', wk = weekWorkouts(), goal = S.goals.weekly;
+    for (var i = 0; i < 7; i++) { var k = dkey(addDays(s, i)), cls = workoutOn(k) ? 'workout' : ''; strip += '<div class="wd"><span>' + ['一', '二', '三', '四', '五', '六', '日'][i] + '</span><div class="dot ' + cls + (k === tk ? ' today' : '') + '">' + (cls ? CHECK : '') + '</div></div>'; }
+    var html = '<div class="stack"><div class="top"><div><div class="eyebrow">朝著自己的節奏前進</div><h1>我的目標</h1></div>' + contestChip() + '</div>';
+    html += '<div class="card"><div class="card-head"><h2>活動進度</h2><span class="small muted">' + S.period.start.replace(/-/g, '/') + ' – ' + S.period.end.replace(/-/g, '/') + '</span></div><div class="timeline"><i style="width:' + (done / total * 100) + '%"></i></div><div class="ticks"><span>12 月首測</span><span>第 ' + done + ' / ' + total + ' 天' + (t >= S.period.start && left > 0 ? '，還有 ' + left + ' 天' : '') + '</span><span>3 月後測</span></div></div>';
+    html += '<div class="card"><div class="card-head"><h2>每週運動目標</h2><span class="small muted">本週 ' + wk + ' / ' + goal + ' 天' + (wk >= goal && goal > 0 ? ' 達成 ✨' : '') + '</span></div><div class="weekstrip">' + strip + '</div><div class="row" style="margin-top:14px"><div class="stepper"><button class="iconbtn" data-act="tminus" aria-label="減少">−</button><span class="v" id="weekly-v">' + goal + '</span><button class="iconbtn" data-act="tplus" aria-label="增加">+</button></div><p class="muted grow small">天／週。先訂一個做得到的數字，做到了再往上加。</p></div></div>';
+    html += '<div class="card why"><div class="card-head"><h2>我為什麼參加</h2><span class="small muted">點一下可以加進去</span></div><div class="chips">' + WHY_CHIPS.map(function (c) { return '<button type="button" class="wchip" data-act="whychip" data-w="' + esc(c) + '">' + esc(c) + '</button>'; }).join('') + '</div><label class="field" for="why" style="margin-top:12px">寫給未來的自己</label><textarea id="why" data-why="1" placeholder="例如：我想要有力氣、穿衣服更有自信。">' + esc(S.goals.why) + '</textarea></div>';
+    html += '<div class="card"><div class="card-head"><h2>我的累積</h2><span class="small muted">每一步都算數</span></div><div class="kv"><div><div class="k">已打卡天數</div><div class="v">' + loggedDays() + '</div></div><div><div class="k">運動天數</div><div class="v">' + totalWorkouts() + '</div></div><div><div class="k">最長連續達標</div><div class="v">' + longestStreak() + ' 天</div></div><div><div class="k">累積積分</div><div class="v">' + earnedTotal() + '</div></div></div></div>';
+    html += '<div class="card"><div class="card-head"><h2>身體數據</h2><span class="small muted">InBody</span></div>' + bodyTableHtml() + '</div>';
+    html += '<div class="card"><div class="card-head"><h2>增肌減脂成果</h2></div><div id="results">' + resultsHtml() + '</div></div></div>';
+    return html;
+  }
+
+  /* ---------- 設定 ---------- */
+  function hasLogs(id) { return Object.keys(S.logs).some(function (k) { return S.logs[k].indexOf(id) >= 0; }); }
+  function importPreviewHtml() {
+    var p = U.importPreview; if (!p) return '';
+    var c = p.cand, ce = c.ledger.filter(function (e) { return !e.revokedAt; }).reduce(function (a, e) { return a + e.points; }, 0), cs = c.redemptions.reduce(function (a, r) { return a + r.cost; }, 0);
+    var warns = [];
+    if (ce < earnedTotal()) warns.push('備份的累積積分（' + ce + '）比目前（' + earnedTotal() + '）少。');
+    if (c.redemptions.length < S.redemptions.length) warns.push('備份的兌換紀錄比目前少，匯入後這些兌換紀錄會消失。');
+    if (Object.keys(c.logs).length < Object.keys(S.logs).length) warns.push('備份的打卡天數比目前少。');
+    if (cs > ce) warns.push('備份的已兌換積分大於累積積分，資料可能不完整。');
+    return '<div class="card note warn" style="margin-top:12px"><div class="b">匯入前請確認</div><div class="kv" style="margin:8px 0"><div><div class="k">備份：打卡天數</div><div class="v">' + Object.keys(c.logs).length + '</div></div><div><div class="k">目前：打卡天數</div><div class="v">' + Object.keys(S.logs).length + '</div></div>' +
+      '<div><div class="k">備份：累積積分</div><div class="v">' + ce + '</div></div><div><div class="k">目前：累積積分</div><div class="v">' + earnedTotal() + '</div></div>' +
+      '<div><div class="k">備份：兌換</div><div class="v">' + c.redemptions.length + ' 次</div></div><div><div class="k">目前：兌換</div><div class="v">' + S.redemptions.length + ' 次</div></div></div>' +
+      (p.exportedAt ? '<div class="small">備份時間：' + esc(dateTimeStr(p.exportedAt)) + '</div>' : '') +
+      (warns.length ? '<ul class="rules" style="margin-top:6px">' + warns.map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '</ul>' : '') +
+      '<p class="small" style="margin:8px 0">匯入會取代目前的全部資料。系統會先自動保留一份目前資料的副本。</p>' +
+      '<label class="checks" style="margin-bottom:10px"><span style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="impok"' + (U.importOk ? ' checked' : '') + '>我了解，確定要用備份取代目前資料</span></label>' +
+      '<div class="row wrap-row"><button class="btn" data-act="importgo"' + (U.importOk ? '' : ' disabled') + '>確認匯入</button><button class="btn ghost" data-act="importcancel">取消</button></div></div>';
+  }
+  function viewSettings() {
+    var html = '<div class="stack"><div class="top"><div><div class="eyebrow">你的專屬設定</div><h1>設定</h1></div></div>';
+    html += '<div class="card"><div class="card-head"><h2>會員資料</h2></div><div class="grid2"><label class="field">姓名或暱稱<input type="text" id="mname" value="' + esc(S.member.name) + '" maxlength="20"></label><label class="field">會員編號（選填）<input type="text" id="mcode" value="' + esc(S.member.code) + '" maxlength="20"></label></div><p class="small muted" style="margin-top:8px">兌換時會顯示在給教練確認的畫面上。</p></div>';
+    html += '<div class="card"><div class="card-head"><h2>活動設定</h2><span class="small muted">第 ' + S.configVersion + ' 版</span></div>' +
+      '<div class="sumrow"><span class="muted">活動期間</span><span class="v">' + S.period.start.replace(/-/g, '/') + ' – ' + S.period.end.replace(/-/g, '/') + '</span></div>' +
+      '<div class="sumrow"><span class="muted">抽獎券兌換</span><span class="v">' + S.ticketCost + ' 積分 / 張</span></div>' +
+      '<p class="small muted" style="margin-top:6px">積分規則、等級與特殊活動由教練統一設定，更新後會自動套用，已經拿到的積分不會改變。</p></div>';
+    var lb = S.lastBackup ? '上次備份：' + dateTimeStr(S.lastBackup) : '還沒有備份過';
+    html += '<div class="card"><div class="card-head"><h2>備份與還原</h2><span class="small muted">' + lb + '</span></div><p class="muted small" style="margin-bottom:10px">資料只存在這個瀏覽器裡。換手機、換瀏覽器或清除瀏覽器資料前，請先備份。</p>' +
+      '<div class="row wrap-row"><button class="btn" data-act="exportdl">下載備份檔</button><button class="btn ghost" data-act="export">複製備份碼</button></div>' +
+      (U.backupText ? '<label class="field" style="margin-top:10px" for="bk">備份碼（如果沒有自動複製，請全選後手動複製）</label><textarea id="bk" readonly>' + esc(U.backupText) + '</textarea>' : '') +
+      '<hr style="border:0;border-top:1px solid var(--border);margin:16px 0"><h3 style="font-size:15px;margin-bottom:8px">還原備份</h3><label class="field" for="imp">把備份碼貼在這裡，或選擇備份檔</label><textarea id="imp" data-imp="1" placeholder="貼上之前複製的備份碼">' + esc(U.importText) + '</textarea>' +
+      '<div class="row wrap-row" style="margin-top:10px"><label class="btn ghost sm" style="display:inline-flex;align-items:center;cursor:pointer">選擇備份檔<input type="file" id="impfile" accept=".json,.txt,application/json,text/plain" hidden></label><button class="btn sm" data-act="importcheck">檢查備份內容</button></div>' +
+      (U.importError ? '<p class="small" style="color:var(--warn);margin-top:8px">' + esc(U.importError) + '</p>' : '') + importPreviewHtml() + '</div>';
+    html += '<div class="card"><div class="card-head"><h2>資料檢查</h2></div><p class="small muted" style="margin-bottom:10px">依照打卡紀錄重新計算所有積分，並檢查明細有沒有重複或遺漏。已兌換的紀錄不會被改動。</p><button class="btn ghost" data-act="recalc">重新計算並驗證積分</button>' + (U.recalcInfo ? '<p class="small" style="margin-top:8px">' + esc(U.recalcInfo) + '</p>' : '') + '</div>';
+    html += '<div class="card"><div class="card-head"><h2>其他</h2></div><div class="row wrap-row"><button class="btn ghost sm" data-act="showhelp">再看一次使用說明</button><button class="btn danger sm' + (U.confirm === 'reset' ? ' armed' : '') + '" data-act="reset">' + (U.confirm === 'reset' ? '再按一次確認清除全部' : '清除全部資料') + '</button></div><p class="small muted" style="margin-top:8px">清除會刪除所有打卡、積分與兌換紀錄，請先備份。</p></div></div>';
+    return html;
+  }
+
+  /* ---------- 彈窗 ---------- */
+  function modalHtml() {
+    if (!U.modal) return '';
+    if (U.modal.type === 'onboard') {
+      return '<div class="overlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="mt">' + mascot(1, true) + '<h2 id="mt">' + (migratedFromV1 && loggedDays() ? '女神養成所升級了' : '歡迎來到女神養成所') + '</h2>' +
+        (migratedFromV1 && loggedDays() ? '<p class="small muted">你原本的打卡紀錄、目標與設定都已保留。新增了積分、等級、活動加碼與抽獎券兌換。</p>' : '') +
+        '<ul><li>每天打勾健康習慣，累積積分、提升女神等級。</li><li>積分滿 ' + S.ticketCost + ' 分，可以到店裡找教練兌換抽獎券。</li><li><b>你的資料只存在這支手機的瀏覽器裡。</b>清除瀏覽器資料、換手機或換瀏覽器，紀錄都可能消失。</li><li>請定期到「設定」備份，建議每週一次。</li></ul>' +
+        '<button class="btn block" data-act="onboarddone">我知道了，開始吧</button></div></div>';
+    }
+    if (U.modal.type === 'level') {
+      var lv = S.levels[U.modal.lv - 1] || levelOf(earnedTotal()), c = '', cols = ['#E8B9AA', '#A9C6B5', '#C7DCE4', '#527568'];
+      for (var i = 0; i < 16; i++) c += '<i style="left:' + (3 + i * 6) + '%;background:' + cols[i % 4] + ';animation-delay:' + ((i % 6) * 0.25) + 's"></i>';
+      return '<div class="overlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="confetti" aria-hidden="true">' + c + '</div>' + mascot(1, true) + '<h2 id="mt" style="text-align:center">升級了！LV' + lv.lv + ' ' + esc(lv.name) + '</h2><p style="text-align:center" class="muted">你的每一天都算數。繼續用自己的節奏閃耀。</p><button class="btn block" data-act="modalclose">太好了</button></div></div>';
+    }
+    return '';
+  }
+
+  /* ---------- 繪製 ---------- */
+  function renderTabs() {
+    document.getElementById('tabs').innerHTML = TABS.map(function (t) {
+      return '<button class="tab' + (U.tab === t[0] ? ' on' : '') + '" data-act="tab" data-tab="' + t[0] + '"' + (U.tab === t[0] ? ' aria-current="page"' : '') + '><svg viewBox="0 0 24 24" aria-hidden="true">' + TAB_ICONS[t[0]] + '</svg>' + t[1] + '</button>';
+    }).join('');
+  }
+  var rendering = false, renderAgain = false;
+  function render() {
+    if (rendering) { renderAgain = true; return; }
+    rendering = true;
+    try {
+      // 先讓目前聚焦的欄位失焦，讓它的 change 事件在重繪前處理完，避免重繪中途又觸發重繪
+      var a = document.activeElement;
+      if (a && a !== document.body && a.blur) { renderAgain = false; a.blur(); }
+      var v = U.tab === 'log' ? viewLog() : U.tab === 'points' ? viewPoints() : U.tab === 'goals' ? viewGoals() : U.tab === 'settings' ? viewSettings() : viewToday();
+      document.getElementById('view').innerHTML = v;
+      document.getElementById('modal').innerHTML = modalHtml();
+      renderTabs();
+      U.justToggled = null;
+    } finally { rendering = false; }
+    if (renderAgain) { renderAgain = false; render(); }
+  }
+  var toastTimer;
+  function toast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, 2800); }
+  function arm(key, fn) {
+    if (U.confirm === key) { U.confirm = null; fn(); return; }
+    U.confirm = key; render();
+    setTimeout(function () { if (U.confirm === key) { U.confirm = null; render(); } }, 4000);
+  }
+  var TAB_IDS = ['today', 'log', 'points', 'goals', 'settings'];
+  function setTab(t) { U.tab = t; U.confirm = null; try { history.replaceState(null, '', '#' + t); } catch (e) { /* ignore */ } render(); window.scrollTo(0, 0); }
+  function uid(p) { return (p || 'h') + '-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5); }
+
+  /* ---------- 備份 ---------- */
+  function exportObject() { var o = clone(S); o.app = 'goddess-habit-tracker'; o.exportedAt = new Date().toISOString(); return o; }
+  function copyText(text, done) {
+    function fallback() { var ta = document.getElementById('bk'); if (ta) { ta.focus(); ta.select(); } done(false); }
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback); else fallback(); } catch (e) { fallback(); }
+  }
+  function parseBackup(text) {
+    var data;
+    try { data = JSON.parse(text); } catch (e) { return { error: '這段內容不是有效的備份碼，請確認有完整複製。' }; }
+    if (!data || typeof data !== 'object' || !Array.isArray(data.habits) || typeof data.logs !== 'object') return { error: '備份格式不符，找不到好習慣或打卡紀錄。' };
+    return { cand: normalize(data), exportedAt: data.exportedAt || null };
+  }
+
+  /* ---------- 操作 ---------- */
+  function celebrateIfLevelUp() {
+    var lv = levelOf(earnedTotal()).lv;
+    if (lv > S.maxLevelCelebrated) { S.maxLevelCelebrated = lv; U.modal = { type: 'level', lv: lv }; }
+  }
+  var actions = {
+    tab: function (el) { setTab(el.getAttribute('data-tab')); },
+    toggle: function (el) {
+      var id = el.getAttribute('data-id'), k = U.sel || todayKey();
+      var snapLog = S.logs[k] ? S.logs[k].slice() : null, snapLedger = clone(S.ledger), snapMissions = clone(S.weekMissions);
+      var beforeIds = {}; activeLedger().forEach(function (e) { beforeIds[e.id] = 1; });
+      var before = earnedTotal(), list = (S.logs[k] || []).slice(), i = list.indexOf(id), adding = false;
+      if (i >= 0) list.splice(i, 1); else { list.push(id); adding = true; }
+      if (list.length) S.logs[k] = list; else delete S.logs[k];
+      reconcileAfterToggle(k);
+      if (earnedTotal() < spentTotal()) {
+        if (snapLog) S.logs[k] = snapLog; else delete S.logs[k];
+        S.ledger = snapLedger; S.weekMissions = snapMissions;
+        toast('這個打勾的積分已經兌換過了，所以無法取消'); render(); return;
+      }
+      if (adding) U.justToggled = id;
+      var diff = earnedTotal() - before, extra = activeLedger().filter(function (e) { return !beforeIds[e.id] && e.type !== 'hab'; }).map(function (e) { return e.label; });
+      save();
+      if (!inPeriod(k)) toast(adding ? '不在活動期間內，不計分' : '已取消');
+      else if (diff > 0) toast('+' + diff + ' 分' + (extra.length ? ' · ' + extra.join('、') : ''));
+      else if (diff < 0) toast(diff + ' 分（積分已撤銷）');
+      else toast(adding ? '已打勾' : '已取消');
+      celebrateIfLevelUp(); render();
+    },
+    msg: function () { U.msgN++; render(); },
+    prevday: function () { U.sel = dkey(addDays(parse(U.sel || todayKey()), -1)); render(); },
+    nextday: function () { var n = dkey(addDays(parse(U.sel || todayKey()), 1)); U.sel = n >= todayKey() ? null : n; render(); },
+    gotoday: function () { U.sel = null; render(); },
+    calprev: function () { U.calMonth = new Date(U.calMonth.getFullYear(), U.calMonth.getMonth() - 1, 1); render(); },
+    calnext: function () { U.calMonth = new Date(U.calMonth.getFullYear(), U.calMonth.getMonth() + 1, 1); render(); },
+    pick: function (el) { var k = el.getAttribute('data-key'); U.sel = k === todayKey() ? null : k; setTab('today'); },
+    tminus: function () { S.goals.weekly = Math.max(1, S.goals.weekly - 1); save(); document.getElementById('weekly-v').textContent = S.goals.weekly; },
+    tplus: function () { S.goals.weekly = Math.min(7, S.goals.weekly + 1); save(); document.getElementById('weekly-v').textContent = S.goals.weekly; },
+    ptab: function (el) { U.ptab = el.getAttribute('data-p'); U.confirm = null; render(); },
+    more: function () { U.ledgerLimit += 30; render(); },
+    rminus: function () { U.redeemN = Math.max(1, U.redeemN - 1); U.confirm = null; render(); },
+    rplus: function () { U.redeemN = U.redeemN + 1; U.confirm = null; render(); },
+    redeemgo: function () {
+      var bal = balance(), cost = S.ticketCost, max = Math.floor(bal / cost), n = Math.min(Math.max(1, U.redeemN), Math.max(1, max));
+      if (max < 1 || n * cost > bal) { toast('積分不足，無法兌換'); return; }
+      arm('redeem', function () {
+        var b = balance();
+        if (n * cost > b) { toast('積分不足，無法兌換'); render(); return; }
+        var rec = { id: 'R' + dkey(new Date()).replace(/-/g, '') + '-' + (S.redemptions.length + 1), ts: new Date().toISOString(), tickets: n, cost: n * cost, rate: cost, before: b, after: b - n * cost };
+        S.redemptions.push(rec); save(); U.lastReceipt = rec; U.redeemN = 1; render(); toast('兌換完成，已扣 ' + rec.cost + ' 分');
+      });
+    },
+    whychip: function (el) {
+      var w = el.getAttribute('data-w'), cur = S.goals.why || '';
+      if (cur.indexOf(w) >= 0) { toast('已經寫過這一項了'); return; }
+      S.goals.why = cur ? cur.replace(/[\s、，,；;]+$/, '') + '、' + w : w; save();
+      var ta = document.getElementById('why'); if (ta) ta.value = S.goals.why;
+    },
+    exportdl: function () {
+      var text = JSON.stringify(exportObject(), null, 1);
+      S.lastBackup = new Date().toISOString(); save();
+      try {
+        var blob = new Blob([text], { type: 'application/json' }), a = document.createElement('a');
+        a.href = URL.createObjectURL(blob); a.download = 'goddess-habit-backup-' + todayKey() + '.json'; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        toast('已產生備份檔；若沒有出現下載，請改用「複製備份碼」');
+      } catch (e) { toast('此瀏覽器無法下載，請改用「複製備份碼」'); }
+      render();
+    },
+    'export': function () {
+      S.lastBackup = new Date().toISOString(); save(); U.backupText = JSON.stringify(exportObject()); render();
+      copyText(U.backupText, function (ok) { toast(ok ? '已複製備份碼' : '請手動全選並複製下方備份碼'); });
+    },
+    importcheck: function () {
+      var ta = document.getElementById('imp'); if (ta) U.importText = ta.value;
+      if (!U.importText.trim()) { U.importError = '請先貼上備份碼，或選擇備份檔。'; U.importPreview = null; render(); return; }
+      var r = parseBackup(U.importText);
+      if (r.error) { U.importError = r.error; U.importPreview = null; } else { U.importError = ''; U.importPreview = r; U.importOk = false; }
+      render();
+    },
+    importcancel: function () { U.importPreview = null; U.importOk = false; render(); },
+    importgo: function () {
+      if (!U.importPreview || !U.importOk) return;
+      try { localStorage.setItem(KEY + '-before-import', JSON.stringify(S)); } catch (e) { /* ignore */ }
+      var snapshot = clone(S);
+      S = U.importPreview.cand; applyConfigIfNeeded(); var ch = reconcileAll();
+      if (earnedTotal() < spentTotal()) { U.importError = '重新計算後，積分少於已兌換的積分，已取消匯入並保留原本資料。'; S = snapshot; U.importPreview = null; render(); return; }
+      S.onboarded = true; save();
+      U.importText = ''; U.importPreview = null; U.importOk = false; U.importError = ''; U.backupText = ''; U.sel = null;
+      U.recalcInfo = '匯入後已重新計算：新增 ' + ch.added + '、撤銷 ' + ch.revoked + '、恢復 ' + ch.restored + ' 筆明細。';
+      render(); toast('已匯入備份並驗證積分');
+    },
+    recalc: function () {
+      var snapshot = clone(S), ch = reconcileAll();
+      if (earnedTotal() < spentTotal()) { S = snapshot; U.recalcInfo = '重新計算後積分會少於已兌換的積分，已取消這次重新計算。請先備份後再檢查規則與活動期間。'; render(); return; }
+      save(); U.recalcInfo = '已重新計算：新增 ' + ch.added + '、撤銷 ' + ch.revoked + '、恢復 ' + ch.restored + ' 筆明細。目前累積 ' + earnedTotal() + ' 分，已兌換 ' + spentTotal() + ' 分。';
+      celebrateIfLevelUp(); render();
+    },
+    showhelp: function () { U.modal = { type: 'onboard' }; render(); },
+    onboarddone: function () { S.onboarded = true; save(); U.modal = null; render(); },
+    modalclose: function () { U.modal = null; save(); render(); },
+    reset: function () {
+      arm('reset', function () {
+        try { localStorage.setItem(KEY + '-before-reset', JSON.stringify(S)); } catch (e) { /* ignore */ }
+        S = freshState(); S.onboarded = true; save(); U.sel = null; U.backupText = ''; U.lastReceipt = null; render(); toast('已清除，重新開始');
+      });
+    }
+  };
+
+  function findById(arr, id) { return arr.find(function (x) { return x.id === id; }); }
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-act]'); if (!el || el.disabled) return;
+    var fn = actions[el.getAttribute('data-act')]; if (fn) fn(el);
+  });
   document.addEventListener('input', function (e) {
-    var t = e.target, p, i, f;
-    if ((p = t.getAttribute('data-p')) != null) { if (t.type === 'number') setPath(A.draft, p, numVal(t)); else setPath(A.draft, p, t.value); save(); refreshChecks(); }
-    else if ((i = t.getAttribute('data-ms')) != null) { f = t.getAttribute('data-f'); var m = A.draft.rules.weekMission.missions[parseInt(i, 10)]; if (f === 'title') m.title = t.value; else if (f === 'days') m.days = numVal(t); save(); refreshChecks(); }
-    else if ((i = t.getAttribute('data-hb')) != null) { f = t.getAttribute('data-f'); habitsOf()[parseInt(i, 10)][f] = t.value; save(); refreshChecks(); }
-    else if ((i = t.getAttribute('data-lv')) != null) { f = t.getAttribute('data-f'); var l = A.draft.levels[parseInt(i, 10)]; if (f === 'name') l.name = t.value; else l.min = numVal(t); save(); refreshChecks(); }
-    else if ((i = t.getAttribute('data-ev')) != null) { f = t.getAttribute('data-f'); var ev = A.draft.events[parseInt(i, 10)]; if (f === 'name' || f === 'desc') ev[f] = t.value; else if (f === 'target' || f === 'points') ev[f] = numVal(t); save(); refreshChecks(); }
-    else if (t.getAttribute('data-imp')) { U.importText = t.value; U.importError = ''; }
+    var t = e.target, id, h, ev, i;
+    if (t.getAttribute('data-body')) { S.goals[t.getAttribute('data-body')][t.getAttribute('data-f')] = t.value; save(); var r = document.getElementById('results'); if (r) r.innerHTML = resultsHtml(); updateChg(); }
+    else if (t.getAttribute('data-why')) { S.goals.why = t.value; save(); }
+    else if (t.getAttribute('data-imp')) { U.importText = t.value; U.importError = ''; U.importPreview = null; }
+    else if (t.id === 'mname') { S.member.name = t.value; save(); }
+    else if (t.id === 'mcode') { S.member.code = t.value; save(); }
   });
   document.addEventListener('change', function (e) {
-    var t = e.target, p, i, f;
-    if ((p = t.getAttribute('data-p')) != null) { refreshChecks(); }
-    else if ((i = t.getAttribute('data-ms')) != null) { if (t.getAttribute('data-f') === 'habitId') { A.draft.rules.weekMission.missions[parseInt(i, 10)].habitId = t.value; save(); } refreshChecks(); }
-    else if ((i = t.getAttribute('data-lv')) != null) { refreshChecks(); }
-    else if ((i = t.getAttribute('data-ev')) != null) {
-      f = t.getAttribute('data-f'); var ev = A.draft.events[parseInt(i, 10)];
-      if (f === 'enabled') { ev.enabled = t.checked; save(); draw(); }
-      else if (f === 'kind') { ev.kind = t.value; save(); draw(); }
-      else if (f === 'habitId') { ev.habitId = t.value; save(); refreshChecks(); }
-      else if (f === 'start' || f === 'end') { if (t.value) ev[f] = t.value; if (ev.end < ev.start) { ev.end = ev.start; save(); draw(); } else { save(); refreshChecks(); } }
-      else refreshChecks();
+    var t = e.target, id, h, ev, f;
+    if (t.id === 'lfilter') { U.ledgerFilter = t.value; U.ledgerLimit = 20; render(); }
+    else if (t.id === 'impok') { U.importOk = t.checked; render(); }
+    else if (t.id === 'impfile' && t.files && t.files[0]) {
+      var fr = new FileReader();
+      fr.onload = function () { U.importText = String(fr.result || ''); U.importError = ''; var r = parseBackup(U.importText); if (r.error) { U.importError = r.error; U.importPreview = null; } else { U.importPreview = r; U.importOk = false; } render(); };
+      fr.onerror = function () { U.importError = '讀取檔案失敗，請改用貼上備份碼。'; render(); };
+      fr.readAsText(t.files[0]);
     }
   });
-  draw();
+  document.addEventListener('keydown', function (e) { if (e.key === 'Enter' && e.target.id === 'newhabit') actions.hadd(); });
+  window.addEventListener('hashchange', function () { var h = location.hash.replace('#', ''); if (TAB_IDS.indexOf(h) >= 0 && h !== U.tab) { U.tab = h; render(); } });
+
+  /* ---------- 套用店內活動設定：只影響未來，不改動已拿到的積分 ---------- */
+  /* 5 個核心習慣由教練統一設定；會員自己建過、已有打卡紀錄的舊習慣保留不動 */
+  function syncHabits() {
+    var list = STORE.habits.map(function (h) { return { id: h.id, name: String(h.name || ''), desc: String(h.desc || ''), icon: ICONS[h.icon] ? h.icon : 'star', workout: !!h.workout, active: true }; });
+    var ids = {}; list.forEach(function (h) { ids[h.id] = 1; });
+    S.habits.forEach(function (h) { if (!ids[h.id] && hasLogs(h.id)) list.push(h); });
+    S.habits = list;
+  }
+  function applyConfigIfNeeded() {
+    if ((S.configVersion || 0) >= STORE.configVersion) return false;
+    var today = todayKey(), tm = tomorrowKey();
+    var from = STORE.rulesEffectiveFrom && DATE_RE.test(STORE.rulesEffectiveFrom) && STORE.rulesEffectiveFrom > tm ? STORE.rulesEffectiveFrom : tm;
+    var newRules = mergeRules(STORE.rules, STORE.rules);
+    var kept = S.rulesHistory.filter(function (v) { return v.from <= today; });
+    if (!kept.length) kept = [S.rulesHistory[0]];
+    S.rulesHistory = kept;
+    if (JSON.stringify(kept[kept.length - 1].rules) !== JSON.stringify(newRules)) S.rulesHistory.push({ from: from, rules: newRules });
+    var periodChanged = S.period.start !== STORE.period.start || S.period.end !== STORE.period.end;
+    S.period = { start: STORE.period.start, end: STORE.period.end };
+    S.ticketCost = STORE.ticketCost;
+    var wkBefore = JSON.stringify(S.habits.map(function (h) { return [h.id, !!h.workout]; }).sort());
+    syncHabits();
+    var wkChanged = wkBefore !== JSON.stringify(S.habits.map(function (h) { return [h.id, !!h.workout]; }).sort());
+    S.levels = normLevels(STORE.levels) || S.levels;
+    S.events = STORE.events.filter(function (e) { return e && e.id; }).map(normEvent);
+    if (periodChanged || wkChanged) {
+      var ledgerBefore = clone(S.ledger);
+      reconcileAll();
+      if (earnedTotal() < spentTotal()) S.ledger = ledgerBefore;
+    }
+    S.maxLevelCelebrated = Math.max(S.maxLevelCelebrated, levelOf(earnedTotal()).lv);
+    S.configVersion = STORE.configVersion;
+    return true;
+  }
+
+  /* ---------- 啟動 ---------- */
+  var now = new Date();
+  U.calMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+  var h0 = location.hash.replace('#', '');
+  if (TAB_IDS.indexOf(h0) >= 0) U.tab = h0;
+  if (migratedFromV1) { reconcileAll(); }
+  var configUpdated = applyConfigIfNeeded();
+  if (!S.onboarded) U.modal = { type: 'onboard' };
+  if (migratedFromV1 || !S.onboarded || configUpdated) save();
+  render();
+  if (configUpdated && loggedDays() > 0) toast('活動設定已更新（第 ' + S.configVersion + ' 版），已拿到的積分不受影響');
 })();
 </script>
 </body>
